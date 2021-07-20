@@ -11,7 +11,7 @@
         <!--Settings-->
         <scene sceneID="Ahs-fT-aFC">
             <objects>
-                <viewController title="Settings" id="THN-oR-Qfk" sceneMemberID="viewController">
+                <viewController title="Settings" id="THN-oR-Qfk" customClass="SettingsViewController" customModule="Passkeyp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gns-rJ-DMg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

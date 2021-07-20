@@ -24,6 +24,14 @@
                                     <segue destination="7Il-ca-3yN" kind="show" id="rLu-Hq-0pm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-Jd-NcK">
+                                <rect key="frame" x="322" y="735" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New"/>
+                                <connections>
+                                    <segue destination="0sN-PO-nmF" kind="show" id="ywE-Pg-Rk2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -76,7 +84,7 @@
         <!--website-->
         <scene sceneID="6Bg-Ua-xn6">
             <objects>
-                <viewController id="7Il-ca-3yN" sceneMemberID="viewController">
+                <viewController id="7Il-ca-3yN" customClass="DisplayWebsiteViewController" customModule="Passkeyp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FQP-Jy-SaK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,16 +116,17 @@
             </objects>
             <point key="canvasLocation" x="726" y="-155"/>
         </scene>
-        <!--View Controller-->
+        <!--Creation Page-->
         <scene sceneID="NdC-Os-mCS">
             <objects>
-                <viewController id="0sN-PO-nmF" sceneMemberID="viewController">
+                <viewController id="0sN-PO-nmF" customClass="NewWebsiteViewController" customModule="Passkeyp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5c8-lU-wXV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="b20-zH-90S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Creation Page" id="Hcd-Ct-nBq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etI-YJ-DQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -30,6 +30,9 @@
 		4DD8EFF526A7724000E0C4AF /* AccentColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */; };
 		4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */; };
 		4DD8EFF926A7725700E0C4AF /* DataManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF826A7725700E0C4AF /* DataManagementViewController.swift */; };
+		4DD8EFFE26A7777100E0C4AF /* DisplayWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFFD26A7777100E0C4AF /* DisplayWebsiteViewController.swift */; };
+		4DD8F00026A7778E00E0C4AF /* NewWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFFF26A7778E00E0C4AF /* NewWebsiteViewController.swift */; };
+		4DD8F00226A7780C00E0C4AF /* EditWeakWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorPickerViewController.swift; sourceTree = "<group>"; };
 		4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPreferencesViewController.swift; sourceTree = "<group>"; };
 		4DD8EFF826A7725700E0C4AF /* DataManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementViewController.swift; sourceTree = "<group>"; };
+		4DD8EFFD26A7777100E0C4AF /* DisplayWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayWebsiteViewController.swift; sourceTree = "<group>"; };
+		4DD8EFFF26A7778E00E0C4AF /* NewWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWebsiteViewController.swift; sourceTree = "<group>"; };
+		4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWeakWebsiteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +99,8 @@
 				4DD8EFD826A759FA00E0C4AF /* StoryBoards */,
 				4DD8EFC126A74E9C00E0C4AF /* AppDelegate.swift */,
 				4DD8EFC326A74E9C00E0C4AF /* SceneDelegate.swift */,
-				4DD8EFC526A74E9C00E0C4AF /* HomeScreenViewController.swift */,
-				4DD8EFEA26A771E400E0C4AF /* SecurityViewController.swift */,
+				4DD8F00326A778A200E0C4AF /* HomeScreen_IB_VCs */,
+				4DD8F00426A7790100E0C4AF /* Security_IB_VCs */,
 				4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */,
 				4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */,
 				4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */,
@@ -124,6 +130,25 @@
 				4DD8EFE826A7666F00E0C4AF /* DataManagement.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		4DD8F00326A778A200E0C4AF /* HomeScreen_IB_VCs */ = {
+			isa = PBXGroup;
+			children = (
+				4DD8EFC526A74E9C00E0C4AF /* HomeScreenViewController.swift */,
+				4DD8EFFD26A7777100E0C4AF /* DisplayWebsiteViewController.swift */,
+				4DD8EFFF26A7778E00E0C4AF /* NewWebsiteViewController.swift */,
+			);
+			path = HomeScreen_IB_VCs;
+			sourceTree = "<group>";
+		};
+		4DD8F00426A7790100E0C4AF /* Security_IB_VCs */ = {
+			isa = PBXGroup;
+			children = (
+				4DD8EFEA26A771E400E0C4AF /* SecurityViewController.swift */,
+				4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */,
+			);
+			path = Security_IB_VCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,15 +229,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD8EFFE26A7777100E0C4AF /* DisplayWebsiteViewController.swift in Sources */,
 				4DD8EFC626A74E9C00E0C4AF /* HomeScreenViewController.swift in Sources */,
 				4DD8EFEF26A7721100E0C4AF /* GitRepositoryViewController.swift in Sources */,
 				4DD8EFCC26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld in Sources */,
+				4DD8F00026A7778E00E0C4AF /* NewWebsiteViewController.swift in Sources */,
 				4DD8EFF326A7722E00E0C4AF /* RandomPasswordViewController.swift in Sources */,
 				4DD8EFC226A74E9C00E0C4AF /* AppDelegate.swift in Sources */,
 				4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */,
 				4DD8EFF126A7721B00E0C4AF /* PGPKeyViewController.swift in Sources */,
 				4DD8EFF926A7725700E0C4AF /* DataManagementViewController.swift in Sources */,
 				4DD8EFF526A7724000E0C4AF /* AccentColorPickerViewController.swift in Sources */,
+				4DD8F00226A7780C00E0C4AF /* EditWeakWebsiteViewController.swift in Sources */,
 				4DD8EFEB26A771E400E0C4AF /* SecurityViewController.swift in Sources */,
 				4DD8EFC426A74E9C00E0C4AF /* SceneDelegate.swift in Sources */,
 				4DD8EFED26A771FC00E0C4AF /* SettingsViewController.swift in Sources */,
