@@ -9,23 +9,55 @@
 /* Begin PBXBuildFile section */
 		4DD8EFC226A74E9C00E0C4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFC126A74E9C00E0C4AF /* AppDelegate.swift */; };
 		4DD8EFC426A74E9C00E0C4AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFC326A74E9C00E0C4AF /* SceneDelegate.swift */; };
-		4DD8EFC626A74E9C00E0C4AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFC526A74E9C00E0C4AF /* ViewController.swift */; };
-		4DD8EFC926A74E9C00E0C4AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFC726A74E9C00E0C4AF /* Main.storyboard */; };
+		4DD8EFC626A74E9C00E0C4AF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFC526A74E9C00E0C4AF /* HomeScreenViewController.swift */; };
+		4DD8EFC926A74E9C00E0C4AF /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFC726A74E9C00E0C4AF /* HomeScreen.storyboard */; };
 		4DD8EFCC26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFCA26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld */; };
 		4DD8EFCE26A74E9E00E0C4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFCD26A74E9E00E0C4AF /* Assets.xcassets */; };
 		4DD8EFD126A74E9E00E0C4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFCF26A74E9E00E0C4AF /* LaunchScreen.storyboard */; };
+		4DD8EFDA26A75A1700E0C4AF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFD926A75A1700E0C4AF /* Settings.storyboard */; };
+		4DD8EFDC26A75F0200E0C4AF /* Security.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFDB26A75F0200E0C4AF /* Security.storyboard */; };
+		4DD8EFDE26A765FE00E0C4AF /* GitRepository.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFDD26A765FE00E0C4AF /* GitRepository.storyboard */; };
+		4DD8EFE026A7661000E0C4AF /* PGPKey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFDF26A7661000E0C4AF /* PGPKey.storyboard */; };
+		4DD8EFE326A7663B00E0C4AF /* GenerateRandomPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFE226A7663B00E0C4AF /* GenerateRandomPassword.storyboard */; };
+		4DD8EFE526A7664900E0C4AF /* AccentColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFE426A7664900E0C4AF /* AccentColor.storyboard */; };
+		4DD8EFE726A7666300E0C4AF /* SignInPreferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFE626A7666300E0C4AF /* SignInPreferences.storyboard */; };
+		4DD8EFE926A7666F00E0C4AF /* DataManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8EFE826A7666F00E0C4AF /* DataManagement.storyboard */; };
+		4DD8EFEB26A771E400E0C4AF /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFEA26A771E400E0C4AF /* SecurityViewController.swift */; };
+		4DD8EFED26A771FC00E0C4AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */; };
+		4DD8EFEF26A7721100E0C4AF /* GitRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */; };
+		4DD8EFF126A7721B00E0C4AF /* PGPKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */; };
+		4DD8EFF326A7722E00E0C4AF /* RandomPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */; };
+		4DD8EFF526A7724000E0C4AF /* AccentColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */; };
+		4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */; };
+		4DD8EFF926A7725700E0C4AF /* DataManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF826A7725700E0C4AF /* DataManagementViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4DD8EFBE26A74E9C00E0C4AF /* Passkeyp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passkeyp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD8EFC126A74E9C00E0C4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD8EFC326A74E9C00E0C4AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4DD8EFC526A74E9C00E0C4AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4DD8EFC826A74E9C00E0C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4DD8EFC526A74E9C00E0C4AF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		4DD8EFC826A74E9C00E0C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeScreen.storyboard; sourceTree = "<group>"; };
 		4DD8EFCB26A74E9C00E0C4AF /* Passkeyp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Passkeyp.xcdatamodel; sourceTree = "<group>"; };
 		4DD8EFCD26A74E9E00E0C4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DD8EFD026A74E9E00E0C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DD8EFD226A74E9E00E0C4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DD8EFD926A75A1700E0C4AF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		4DD8EFDB26A75F0200E0C4AF /* Security.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Security.storyboard; sourceTree = "<group>"; };
+		4DD8EFDD26A765FE00E0C4AF /* GitRepository.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GitRepository.storyboard; sourceTree = "<group>"; };
+		4DD8EFDF26A7661000E0C4AF /* PGPKey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PGPKey.storyboard; sourceTree = "<group>"; };
+		4DD8EFE226A7663B00E0C4AF /* GenerateRandomPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenerateRandomPassword.storyboard; sourceTree = "<group>"; };
+		4DD8EFE426A7664900E0C4AF /* AccentColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccentColor.storyboard; sourceTree = "<group>"; };
+		4DD8EFE626A7666300E0C4AF /* SignInPreferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInPreferences.storyboard; sourceTree = "<group>"; };
+		4DD8EFE826A7666F00E0C4AF /* DataManagement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataManagement.storyboard; sourceTree = "<group>"; };
+		4DD8EFEA26A771E400E0C4AF /* SecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
+		4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryViewController.swift; sourceTree = "<group>"; };
+		4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGPKeyViewController.swift; sourceTree = "<group>"; };
+		4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPasswordViewController.swift; sourceTree = "<group>"; };
+		4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorPickerViewController.swift; sourceTree = "<group>"; };
+		4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPreferencesViewController.swift; sourceTree = "<group>"; };
+		4DD8EFF826A7725700E0C4AF /* DataManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +90,40 @@
 		4DD8EFC026A74E9C00E0C4AF /* Passkeyp */ = {
 			isa = PBXGroup;
 			children = (
+				4DD8EFD826A759FA00E0C4AF /* StoryBoards */,
 				4DD8EFC126A74E9C00E0C4AF /* AppDelegate.swift */,
 				4DD8EFC326A74E9C00E0C4AF /* SceneDelegate.swift */,
-				4DD8EFC526A74E9C00E0C4AF /* ViewController.swift */,
-				4DD8EFC726A74E9C00E0C4AF /* Main.storyboard */,
+				4DD8EFC526A74E9C00E0C4AF /* HomeScreenViewController.swift */,
+				4DD8EFEA26A771E400E0C4AF /* SecurityViewController.swift */,
+				4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */,
+				4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */,
+				4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */,
+				4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */,
+				4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */,
+				4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */,
+				4DD8EFF826A7725700E0C4AF /* DataManagementViewController.swift */,
 				4DD8EFCD26A74E9E00E0C4AF /* Assets.xcassets */,
-				4DD8EFCF26A74E9E00E0C4AF /* LaunchScreen.storyboard */,
 				4DD8EFD226A74E9E00E0C4AF /* Info.plist */,
 				4DD8EFCA26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld */,
 			);
 			path = Passkeyp;
+			sourceTree = "<group>";
+		};
+		4DD8EFD826A759FA00E0C4AF /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				4DD8EFCF26A74E9E00E0C4AF /* LaunchScreen.storyboard */,
+				4DD8EFC726A74E9C00E0C4AF /* HomeScreen.storyboard */,
+				4DD8EFDB26A75F0200E0C4AF /* Security.storyboard */,
+				4DD8EFD926A75A1700E0C4AF /* Settings.storyboard */,
+				4DD8EFDD26A765FE00E0C4AF /* GitRepository.storyboard */,
+				4DD8EFDF26A7661000E0C4AF /* PGPKey.storyboard */,
+				4DD8EFE226A7663B00E0C4AF /* GenerateRandomPassword.storyboard */,
+				4DD8EFE426A7664900E0C4AF /* AccentColor.storyboard */,
+				4DD8EFE626A7666300E0C4AF /* SignInPreferences.storyboard */,
+				4DD8EFE826A7666F00E0C4AF /* DataManagement.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +183,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD8EFE526A7664900E0C4AF /* AccentColor.storyboard in Resources */,
 				4DD8EFD126A74E9E00E0C4AF /* LaunchScreen.storyboard in Resources */,
 				4DD8EFCE26A74E9E00E0C4AF /* Assets.xcassets in Resources */,
-				4DD8EFC926A74E9C00E0C4AF /* Main.storyboard in Resources */,
+				4DD8EFDE26A765FE00E0C4AF /* GitRepository.storyboard in Resources */,
+				4DD8EFC926A74E9C00E0C4AF /* HomeScreen.storyboard in Resources */,
+				4DD8EFE026A7661000E0C4AF /* PGPKey.storyboard in Resources */,
+				4DD8EFE326A7663B00E0C4AF /* GenerateRandomPassword.storyboard in Resources */,
+				4DD8EFDA26A75A1700E0C4AF /* Settings.storyboard in Resources */,
+				4DD8EFDC26A75F0200E0C4AF /* Security.storyboard in Resources */,
+				4DD8EFE926A7666F00E0C4AF /* DataManagement.storyboard in Resources */,
+				4DD8EFE726A7666300E0C4AF /* SignInPreferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,22 +204,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD8EFC626A74E9C00E0C4AF /* ViewController.swift in Sources */,
+				4DD8EFC626A74E9C00E0C4AF /* HomeScreenViewController.swift in Sources */,
+				4DD8EFEF26A7721100E0C4AF /* GitRepositoryViewController.swift in Sources */,
 				4DD8EFCC26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld in Sources */,
+				4DD8EFF326A7722E00E0C4AF /* RandomPasswordViewController.swift in Sources */,
 				4DD8EFC226A74E9C00E0C4AF /* AppDelegate.swift in Sources */,
+				4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */,
+				4DD8EFF126A7721B00E0C4AF /* PGPKeyViewController.swift in Sources */,
+				4DD8EFF926A7725700E0C4AF /* DataManagementViewController.swift in Sources */,
+				4DD8EFF526A7724000E0C4AF /* AccentColorPickerViewController.swift in Sources */,
+				4DD8EFEB26A771E400E0C4AF /* SecurityViewController.swift in Sources */,
 				4DD8EFC426A74E9C00E0C4AF /* SceneDelegate.swift in Sources */,
+				4DD8EFED26A771FC00E0C4AF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4DD8EFC726A74E9C00E0C4AF /* Main.storyboard */ = {
+		4DD8EFC726A74E9C00E0C4AF /* HomeScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4DD8EFC826A74E9C00E0C4AF /* Base */,
 			);
-			name = Main.storyboard;
+			name = HomeScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		4DD8EFCF26A74E9E00E0C4AF /* LaunchScreen.storyboard */ = {
