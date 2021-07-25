@@ -30,9 +30,12 @@
 		4DD8EFF526A7724000E0C4AF /* AccentColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */; };
 		4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */; };
 		4DD8EFF926A7725700E0C4AF /* DataManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF826A7725700E0C4AF /* DataManagementViewController.swift */; };
-		4DD8EFFE26A7777100E0C4AF /* DisplayWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFFD26A7777100E0C4AF /* DisplayWebsiteViewController.swift */; };
-		4DD8F00026A7778E00E0C4AF /* NewWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFFF26A7778E00E0C4AF /* NewWebsiteViewController.swift */; };
+		4DD8EFFE26A7777100E0C4AF /* DisplayKeypViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFFD26A7777100E0C4AF /* DisplayKeypViewController.swift */; };
+		4DD8F00026A7778E00E0C4AF /* NewKeypViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFFF26A7778E00E0C4AF /* NewKeypViewController.swift */; };
 		4DD8F00226A7780C00E0C4AF /* EditWeakWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */; };
+		4DF3224526A9F696001B8121 /* DPImageView+LettersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */; };
+		4DF3224726A9F921001B8121 /* WebsiteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224626A9F921001B8121 /* WebsiteDataController.swift */; };
+		4DF3224926AA7A9E001B8121 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3224826AA7A9E001B8121 /* View.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +64,12 @@
 		4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorPickerViewController.swift; sourceTree = "<group>"; };
 		4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPreferencesViewController.swift; sourceTree = "<group>"; };
 		4DD8EFF826A7725700E0C4AF /* DataManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementViewController.swift; sourceTree = "<group>"; };
-		4DD8EFFD26A7777100E0C4AF /* DisplayWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayWebsiteViewController.swift; sourceTree = "<group>"; };
-		4DD8EFFF26A7778E00E0C4AF /* NewWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWebsiteViewController.swift; sourceTree = "<group>"; };
+		4DD8EFFD26A7777100E0C4AF /* DisplayKeypViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayKeypViewController.swift; sourceTree = "<group>"; };
+		4DD8EFFF26A7778E00E0C4AF /* NewKeypViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewKeypViewController.swift; sourceTree = "<group>"; };
 		4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWeakWebsiteViewController.swift; sourceTree = "<group>"; };
+		4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPImageView+LettersExtension.swift"; sourceTree = "<group>"; };
+		4DF3224626A9F921001B8121 /* WebsiteDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteDataController.swift; sourceTree = "<group>"; };
+		4DF3224826AA7A9E001B8121 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 				4DD8EFCD26A74E9E00E0C4AF /* Assets.xcassets */,
 				4DD8EFD226A74E9E00E0C4AF /* Info.plist */,
 				4DD8EFCA26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld */,
+				4DF3224626A9F921001B8121 /* WebsiteDataController.swift */,
 			);
 			path = Passkeyp;
 			sourceTree = "<group>";
@@ -128,6 +135,7 @@
 				4DD8EFE426A7664900E0C4AF /* AccentColor.storyboard */,
 				4DD8EFE626A7666300E0C4AF /* SignInPreferences.storyboard */,
 				4DD8EFE826A7666F00E0C4AF /* DataManagement.storyboard */,
+				4DF3224826AA7A9E001B8121 /* View.xib */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -136,8 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				4DD8EFC526A74E9C00E0C4AF /* HomeScreenViewController.swift */,
-				4DD8EFFD26A7777100E0C4AF /* DisplayWebsiteViewController.swift */,
-				4DD8EFFF26A7778E00E0C4AF /* NewWebsiteViewController.swift */,
+				4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */,
+				4DD8EFFD26A7777100E0C4AF /* DisplayKeypViewController.swift */,
+				4DD8EFFF26A7778E00E0C4AF /* NewKeypViewController.swift */,
 			);
 			path = HomeScreen_IB_VCs;
 			sourceTree = "<group>";
@@ -212,6 +221,7 @@
 				4DD8EFD126A74E9E00E0C4AF /* LaunchScreen.storyboard in Resources */,
 				4DD8EFCE26A74E9E00E0C4AF /* Assets.xcassets in Resources */,
 				4DD8EFDE26A765FE00E0C4AF /* GitRepository.storyboard in Resources */,
+				4DF3224926AA7A9E001B8121 /* View.xib in Resources */,
 				4DD8EFC926A74E9C00E0C4AF /* HomeScreen.storyboard in Resources */,
 				4DD8EFE026A7661000E0C4AF /* PGPKey.storyboard in Resources */,
 				4DD8EFE326A7663B00E0C4AF /* GenerateRandomPassword.storyboard in Resources */,
@@ -229,11 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD8EFFE26A7777100E0C4AF /* DisplayWebsiteViewController.swift in Sources */,
+				4DD8EFFE26A7777100E0C4AF /* DisplayKeypViewController.swift in Sources */,
 				4DD8EFC626A74E9C00E0C4AF /* HomeScreenViewController.swift in Sources */,
+				4DF3224526A9F696001B8121 /* DPImageView+LettersExtension.swift in Sources */,
 				4DD8EFEF26A7721100E0C4AF /* GitRepositoryViewController.swift in Sources */,
 				4DD8EFCC26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld in Sources */,
-				4DD8F00026A7778E00E0C4AF /* NewWebsiteViewController.swift in Sources */,
+				4DD8F00026A7778E00E0C4AF /* NewKeypViewController.swift in Sources */,
 				4DD8EFF326A7722E00E0C4AF /* RandomPasswordViewController.swift in Sources */,
 				4DD8EFC226A74E9C00E0C4AF /* AppDelegate.swift in Sources */,
 				4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */,
@@ -242,6 +253,7 @@
 				4DD8EFF526A7724000E0C4AF /* AccentColorPickerViewController.swift in Sources */,
 				4DD8F00226A7780C00E0C4AF /* EditWeakWebsiteViewController.swift in Sources */,
 				4DD8EFEB26A771E400E0C4AF /* SecurityViewController.swift in Sources */,
+				4DF3224726A9F921001B8121 /* WebsiteDataController.swift in Sources */,
 				4DD8EFC426A74E9C00E0C4AF /* SceneDelegate.swift in Sources */,
 				4DD8EFED26A771FC00E0C4AF /* SettingsViewController.swift in Sources */,
 			);

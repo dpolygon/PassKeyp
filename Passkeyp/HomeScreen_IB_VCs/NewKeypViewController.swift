@@ -7,15 +7,25 @@
 
 import UIKit
 
-class NewWebsiteViewController: UIViewController {
+class NewKeypViewController: UIViewController {
 
+    @IBOutlet var newKeypCard: UIView!
+    @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        newKeypCard.layer.cornerRadius = 14
+        saveButton.layer.cornerRadius = 14
     }
     
-
+    @IBAction func closePressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func savePressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
