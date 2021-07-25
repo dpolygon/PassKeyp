@@ -7,14 +7,31 @@
 
 import UIKit
 
-class SecurityViewController: UIViewController {
-
+class SecurityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let cellIdentifier = "passwordCell"
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // TODO: set source and delegate correctly
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
+    // TODO: implement protocol methods with correct data
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath)
+        cell.textLabel?.text = "first cell"
+        cell.detailTextLabel?.text = "this is the first cell"
+        return cell
+    }
 
     /*
     // MARK: - Navigation
