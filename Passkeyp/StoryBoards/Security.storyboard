@@ -102,15 +102,14 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wge-c5-VW6">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Wge-c5-VW6">
                                         <rect key="frame" x="0.0" y="159" width="370" height="514"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="passwordCell" textLabel="Wac-vc-p5l" detailTextLabel="bgM-Xs-6fS" style="IBUITableViewCellStyleSubtitle" id="QE5-zD-8j1">
-                                                <rect key="frame" x="0.0" y="24.333333969116211" width="370" height="43.666667938232422"/>
+                                                <rect key="frame" x="20" y="49" width="330" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QE5-zD-8j1" id="cNd-pn-67G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="340.33333333333331" height="43.666667938232422"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300.33333333333331" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wac-vc-p5l">
@@ -129,7 +128,7 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <segue destination="Cf2-PZ-2A0" kind="show" id="NvB-cD-j8j"/>
                                                 </connections>
@@ -182,7 +181,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec1-Fh-gph">
                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="35"/>
                                                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -233,6 +232,9 @@
                                                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="eye.fill" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="showPasswordPressed:" destination="Cf2-PZ-2A0" eventType="touchUpInside" id="vwf-QM-dzM"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -259,11 +261,9 @@
                                                                 <state key="normal" title="Edit Password">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                        <integer key="value" value="10"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="editPressed:" destination="Cf2-PZ-2A0" eventType="touchUpInside" id="s1N-En-fES"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ogy-Lw-lic">
                                                                 <rect key="frame" x="252.66666666666671" y="-6.6666666666666607" width="17.333333333333343" height="49.333333333333329"/>
@@ -303,11 +303,9 @@
                                                                 <state key="normal" title="Generate New Random Password">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                        <integer key="value" value="10"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="generatePasswordPressed:" destination="Cf2-PZ-2A0" eventType="touchUpInside" id="3Pj-Hr-srK"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.on.clipboard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sgu-j7-8Ii">
                                                                 <rect key="frame" x="249" y="-10.999999999999993" width="21" height="57.000000000000007"/>
@@ -354,6 +352,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="savePressed:" destination="Cf2-PZ-2A0" eventType="touchUpInside" id="CJk-YE-ioe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -368,19 +369,22 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="734" verticalCompressionResistancePriority="734" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZd-Rv-bb1">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <state key="normal" title="Delete password">
-                                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deletePasswordPressed:" destination="Cf2-PZ-2A0" eventType="touchUpInside" id="kAj-Bn-fgT"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EeK-2p-bFp">
                                                 <rect key="frame" x="151" y="4.3333333333333321" width="19" height="20.333333333333332"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -411,6 +415,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Password Screen" id="T4r-Bf-jOx"/>
+                    <connections>
+                        <outlet property="deleteButton" destination="cZd-Rv-bb1" id="ncC-Ay-wcg"/>
+                        <outlet property="saveButton" destination="eF6-yr-ZtM" id="g8n-xQ-i70"/>
+                        <outlet property="separatorLine1" destination="CAv-x1-nkF" id="gzb-oT-B3H"/>
+                        <outlet property="separatorLine2" destination="gGC-v2-sFZ" id="rs4-KT-qPI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dh-YN-F1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -444,9 +454,6 @@
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.crop.circle.badge.exclamationmark" catalog="system" width="128" height="113"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

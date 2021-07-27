@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,9 +16,140 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="JMp-7p-lVN">
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" text="Select an accent color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qV9-1U-CLS">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="4ZM-3o-qbm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f4P-GA-f04">
+                                        <rect key="frame" x="0.0" y="39" width="374" height="150"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M0s-ZY-G2B">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="71"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSn-nc-TP6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="71"/>
+                                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="blueSelected:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Pi-FY-LaG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHJ-E9-caa">
+                                                        <rect key="frame" x="128" y="0.0" width="118" height="71"/>
+                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="tealSelected:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8ua-76-BTI"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6p-ao-Pk0">
+                                                        <rect key="frame" x="256" y="0.0" width="118" height="71"/>
+                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="greenSelected:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="R02-xQ-DTe"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y4v-Ip-KHz">
+                                                <rect key="frame" x="0.0" y="79" width="374" height="71"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ax-KG-7Sv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="71"/>
+                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="redSelected:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xLa-XX-Rjh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjl-p6-t0X">
+                                                        <rect key="frame" x="128" y="0.0" width="118" height="71"/>
+                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="orangeSelected:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TpF-BP-Auy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAx-eS-9JA">
+                                                        <rect key="frame" x="256" y="0.0" width="118" height="71"/>
+                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="yellowSelected:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c8W-w9-7E1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="H1P-dx-8z5"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="247" verticalHuggingPriority="247" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" translatesAutoresizingMaskIntoConstraints="NO" id="fBW-9x-36V">
+                                        <rect key="frame" x="0.0" y="208" width="374" height="570"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueAccent" translatesAutoresizingMaskIntoConstraints="NO" id="Jxc-Hg-hVr">
+                                                <rect key="frame" x="80" y="0.0" width="214" height="570"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Jxc-Hg-hVr" secondAttribute="bottom" id="1VN-JK-mUY"/>
+                                            <constraint firstItem="Jxc-Hg-hVr" firstAttribute="top" secondItem="fBW-9x-36V" secondAttribute="top" id="Flj-s5-2dn"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jxc-Hg-hVr" secondAttribute="trailing" constant="80" id="Ib8-l2-CQX"/>
+                                            <constraint firstItem="Jxc-Hg-hVr" firstAttribute="leading" secondItem="fBW-9x-36V" secondAttribute="leading" constant="80" id="dhH-C9-cPk"/>
+                                            <constraint firstItem="Jxc-Hg-hVr" firstAttribute="centerY" secondItem="fBW-9x-36V" secondAttribute="centerY" id="yc5-5w-sDA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JMp-7p-lVN" secondAttribute="trailing" constant="20" id="RlV-ct-Np1"/>
+                            <constraint firstItem="JMp-7p-lVN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Sb7-z4-GD2"/>
+                            <constraint firstItem="JMp-7p-lVN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Tud-rz-gvQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JMp-7p-lVN" secondAttribute="bottom" constant="20" id="dF7-Zr-sYK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewImage" destination="Jxc-Hg-hVr" id="V0C-NL-8ye"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,8 +157,30 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BlueAccent" width="680" height="1360"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

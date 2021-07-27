@@ -9,13 +9,21 @@ import UIKit
 
 class DataManagementViewController: UIViewController {
 
+    @IBOutlet weak var eraseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        eraseButton.backgroundColor = accentColor
+    }
+        
+    @IBAction func eraseDataPressed(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

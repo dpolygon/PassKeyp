@@ -275,10 +275,30 @@
         <!--Settings-->
         <scene sceneID="E0f-uD-h9h">
             <objects>
-                <tableViewController title="Settings" id="sQr-eh-K4G" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="sQr-eh-K4G" customClass="SettingsViewController" customModule="Passkeyp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="APo-zE-n4U">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="PgU-Zu-eCf">
+                            <rect key="frame" x="0.0" y="515.66667556762695" width="390" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYm-63-OxF">
+                                    <rect key="frame" x="0.0" y="0.0" width="195" height="44"/>
+                                    <state key="normal" title="FAQ"/>
+                                    <connections>
+                                        <action selector="faqPressed:" destination="IU2-67-Zfn" eventType="touchUpInside" id="NiM-hd-x0j"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlH-oz-bOw">
+                                    <rect key="frame" x="195" y="0.0" width="195" height="44"/>
+                                    <state key="normal" title="About"/>
+                                    <connections>
+                                        <action selector="aboutPressed:" destination="IU2-67-Zfn" eventType="touchUpInside" id="PtF-ag-plM"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                         <sections>
                             <tableViewSection headerTitle="Utilities" id="6sd-mG-Cjv">
                                 <cells>
@@ -346,7 +366,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Mode" id="VQe-cV-okI">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XCl-cb-een">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="XCl-cb-een">
                                         <rect key="frame" x="20" y="229.66666984558105" width="350" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XCl-cb-een" id="2G7-N7-n2i">
@@ -359,8 +379,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hS-9H-fto">
-                                                    <rect key="frame" x="321" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0hS-9H-fto">
+                                                    <rect key="frame" x="281" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                    <connections>
+                                                        <action selector="matchChanged:" destination="sQr-eh-K4G" eventType="valueChanged" id="4Xe-Ql-OLf"/>
+                                                        <action selector="matchValChanged:" destination="IU2-67-Zfn" eventType="valueChanged" id="ZJB-NC-Tkv"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -371,7 +395,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yxd-V9-gCZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Yxd-V9-gCZ">
                                         <rect key="frame" x="20" y="273.33333778381348" width="350" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yxd-V9-gCZ" id="gYf-T3-8o9">
@@ -384,8 +408,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewm-R1-LPY">
-                                                    <rect key="frame" x="321" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ewm-R1-LPY">
+                                                    <rect key="frame" x="281" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                    <connections>
+                                                        <action selector="darkChanged:" destination="sQr-eh-K4G" eventType="valueChanged" id="pfl-7Q-fSR"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -469,10 +496,17 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape.2" catalog="system" id="6On-8C-yYy"/>
-                    <navigationItem key="navigationItem" id="JD3-rk-hOA"/>
+                    <navigationItem key="navigationItem" title="Settings" id="JD3-rk-hOA"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="aboutButton" destination="TlH-oz-bOw" id="1Kc-g5-oKy"/>
+                        <outlet property="darkModeSwitch" destination="ewm-R1-LPY" id="BYc-CX-q7m"/>
+                        <outlet property="faqButton" destination="OYm-63-OxF" id="1No-LY-Uec"/>
+                        <outlet property="matchSystemSwitch" destination="0hS-9H-fto" id="lWJ-L3-3dp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzQ-qq-nuP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="IU2-67-Zfn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1263.768115942029" y="-106.47321428571428"/>
         </scene>
