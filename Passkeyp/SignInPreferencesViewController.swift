@@ -7,15 +7,22 @@
 
 import UIKit
 
-class SignInPreferencesViewController: UIViewController {
+class SignInPreferencesViewController: UITableViewController {
 
+    @IBOutlet weak var faceIDSwitch: UISwitch!
+    @IBOutlet weak var passwordSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        faceIDSwitch.onTintColor = accentColor
+        passwordSwitch.onTintColor = accentColor
+    }
+    
     /*
     // MARK: - Navigation
 
