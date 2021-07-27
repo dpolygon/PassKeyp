@@ -7,6 +7,8 @@
 
 import UIKit
 
+var faceIDHidden = false
+
 class SignInPreferencesViewController: UITableViewController {
 
     @IBOutlet weak var faceIDSwitch: UISwitch!
@@ -21,6 +23,14 @@ class SignInPreferencesViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         faceIDSwitch.onTintColor = accentColor
         passwordSwitch.onTintColor = accentColor
+    }
+    
+    @IBAction func requirePasswordChanged(_ sender: Any) {
+        faceIDHidden = passwordSwitch.isOn
+    }
+    
+    @IBAction func faceIDChanged(_ sender: Any) {
+        faceIDHidden = passwordSwitch.isOn || faceIDSwitch.isOn == false
     }
     
     /*

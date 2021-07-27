@@ -40,6 +40,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0D-ly-BOv">
                                                     <rect key="frame" x="305" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="requirePasswordChanged:" destination="yvb-gm-y94" eventType="valueChanged" id="eBu-dZ-7c1"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -65,6 +68,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VZx-ab-uWm">
                                                     <rect key="frame" x="305" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="faceIDChanged:" destination="yvb-gm-y94" eventType="valueChanged" id="wk9-Yp-kiM"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>

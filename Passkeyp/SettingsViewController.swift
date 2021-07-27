@@ -9,6 +9,7 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    private let segueIdentifier = "logInIdentifier"
     @IBOutlet weak var matchSystemSwitch: UISwitch!
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var faqButton: UIButton!
@@ -49,6 +50,13 @@ class SettingsViewController: UITableViewController {
         } else {
             view.window?.overrideUserInterfaceStyle = .light
             overrideUserInterfaceStyle = .light
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // code for log out selection
+        if indexPath.section == 3 {
+            performSegue(withIdentifier: segueIdentifier, sender: nil)
         }
     }
     /*
