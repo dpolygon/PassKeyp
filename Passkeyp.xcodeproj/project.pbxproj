@@ -36,6 +36,9 @@
 		4DF3224526A9F696001B8121 /* DPImageView+LettersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */; };
 		4DF3224726A9F921001B8121 /* WebsiteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224626A9F921001B8121 /* WebsiteDataController.swift */; };
 		4DF3224926AA7A9E001B8121 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3224826AA7A9E001B8121 /* View.xib */; };
+		944B2F6D26B0A403005EDE37 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */; };
+		9489313626B08EF800141394 /* LogInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489313526B08EF800141394 /* LogInStoryboard.storyboard */; };
+		9489313826B08F2F00141394 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489313726B08F2F00141394 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPImageView+LettersExtension.swift"; sourceTree = "<group>"; };
 		4DF3224626A9F921001B8121 /* WebsiteDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteDataController.swift; sourceTree = "<group>"; };
 		4DF3224826AA7A9E001B8121 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9489313526B08EF800141394 /* LogInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInStoryboard.storyboard; sourceTree = "<group>"; };
+		9489313726B08F2F00141394 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +115,9 @@
 				4DD8F00426A7790100E0C4AF /* Security_IB_VCs */,
 				4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */,
 				4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */,
+				944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */,
 				4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */,
+				9489313726B08F2F00141394 /* LogInViewController.swift */,
 				4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */,
 				4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */,
 				4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */,
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4DD8EFCF26A74E9E00E0C4AF /* LaunchScreen.storyboard */,
+				9489313526B08EF800141394 /* LogInStoryboard.storyboard */,
 				4DD8EFC726A74E9C00E0C4AF /* HomeScreen.storyboard */,
 				4DD8EFDB26A75F0200E0C4AF /* Security.storyboard */,
 				4DD8EFD926A75A1700E0C4AF /* Settings.storyboard */,
@@ -218,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD8EFE526A7664900E0C4AF /* AccentColor.storyboard in Resources */,
+				9489313626B08EF800141394 /* LogInStoryboard.storyboard in Resources */,
 				4DD8EFD126A74E9E00E0C4AF /* LaunchScreen.storyboard in Resources */,
 				4DD8EFCE26A74E9E00E0C4AF /* Assets.xcassets in Resources */,
 				4DD8EFDE26A765FE00E0C4AF /* GitRepository.storyboard in Resources */,
@@ -241,10 +251,12 @@
 			files = (
 				4DD8EFFE26A7777100E0C4AF /* DisplayKeypViewController.swift in Sources */,
 				4DD8EFC626A74E9C00E0C4AF /* HomeScreenViewController.swift in Sources */,
+				9489313826B08F2F00141394 /* LogInViewController.swift in Sources */,
 				4DF3224526A9F696001B8121 /* DPImageView+LettersExtension.swift in Sources */,
 				4DD8EFEF26A7721100E0C4AF /* GitRepositoryViewController.swift in Sources */,
 				4DD8EFCC26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld in Sources */,
 				4DD8F00026A7778E00E0C4AF /* NewKeypViewController.swift in Sources */,
+				944B2F6D26B0A403005EDE37 /* SignUpViewController.swift in Sources */,
 				4DD8EFF326A7722E00E0C4AF /* RandomPasswordViewController.swift in Sources */,
 				4DD8EFC226A74E9C00E0C4AF /* AppDelegate.swift in Sources */,
 				4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */,
@@ -403,13 +415,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TMNQB85S4M;
+				DEVELOPMENT_TEAM = Y5X54T6NKN;
 				INFOPLIST_FILE = Passkeyp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Y2k.Passkeyp;
+				PRODUCT_BUNDLE_IDENTIFIER = ezueck.Passkeyp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,13 +434,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TMNQB85S4M;
+				DEVELOPMENT_TEAM = Y5X54T6NKN;
 				INFOPLIST_FILE = Passkeyp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Y2k.Passkeyp;
+				PRODUCT_BUNDLE_IDENTIFIER = ezueck.Passkeyp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
