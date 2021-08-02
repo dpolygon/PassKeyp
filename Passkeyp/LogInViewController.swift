@@ -7,6 +7,7 @@
 
 import UIKit
 import LocalAuthentication
+import Firebase
 
 var context = LAContext()
 
@@ -18,6 +19,8 @@ class LogInViewController: UIViewController {
     
     private let segueIdentifier = "homeScreenSegue"
     @IBOutlet weak var faceIDButton: UIButton!
+    @IBOutlet weak var userField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var statusLabel: UILabel!
     var state = AuthenticationState.loggedout {
@@ -39,6 +42,14 @@ class LogInViewController: UIViewController {
         
         // check for ability to use face ID
         context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        
+        Auth.auth().addStateDidChangeListener() {
+          auth, user in
+          
+          if user != nil {
+            self.state = .loggedin
+          }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +59,19 @@ class LogInViewController: UIViewController {
     
     @IBAction func logInPressed(_ sender: Any) {
         // check for correct credentials and change state
-        state = .loggedin
+        guard let email = userField.text, let password = passwordField.text , email.count > 0, password.count > 0 else {
+            statusLabel.text = "Missing field(s)."
+            statusLabel.isHidden = false
+            
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            if let error = error, user == nil {
+                self.statusLabel.text = "Authentication unsuccessful."
+                self.statusLabel.isHidden = false
+            }
+        }
     }
     
     @IBAction func faceIDPressed(_ sender: Any) {

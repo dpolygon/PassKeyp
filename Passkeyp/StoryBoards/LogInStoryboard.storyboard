@@ -26,10 +26,10 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hzz-kj-t7o">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="57.666666666666664"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type in your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knf-kT-fkt">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type in your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knf-kT-fkt">
                                                         <rect key="frame" x="0.0" y="0.0" width="250" height="18.666666666666668"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJd-Vq-gI4">
                                                         <rect key="frame" x="0.0" y="26.666666666666629" width="250" height="1"/>
@@ -135,7 +135,9 @@
                     <navigationItem key="navigationItem" id="vcx-7a-pg0"/>
                     <connections>
                         <outlet property="faceIDButton" destination="kwP-qe-bTe" id="ytQ-NP-vEO"/>
+                        <outlet property="passwordField" destination="fbN-Jf-4Gs" id="nZJ-3q-agz"/>
                         <outlet property="statusLabel" destination="99D-IK-dA7" id="L1z-TK-X5G"/>
+                        <outlet property="userField" destination="knf-kT-fkt" id="Ov3-Bw-W8K"/>
                         <segue destination="ZcC-cO-ya5" kind="presentation" identifier="homeScreenSegue" modalPresentationStyle="fullScreen" id="gPl-4a-jTi"/>
                     </connections>
                 </viewController>
@@ -162,21 +164,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkA-F3-PxH" userLabel="White View">
-                                <rect key="frame" x="60" y="329.66666666666669" width="270" height="185.00000000000006"/>
+                                <rect key="frame" x="60" y="331.33333333333331" width="270" height="181.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4Fy-fm-RPq" userLabel="Full View Stack">
-                                        <rect key="frame" x="10" y="20" width="250" height="150"/>
+                                        <rect key="frame" x="10" y="20" width="250" height="146.66666666666666"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bq1-ab-mTN">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="90"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="86.666666666666671"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type in your new username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXm-Sj-dzd">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type in your new email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXm-Sj-dzd">
                                                         <rect key="frame" x="0.0" y="0.0" width="250" height="18.666666666666668"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvb-n7-nvt">
-                                                        <rect key="frame" x="0.0" y="26.666666666666629" width="250" height="1"/>
+                                                        <rect key="frame" x="0.0" y="26.666666666666686" width="250" height="1"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="fVo-oo-OAT"/>
@@ -188,12 +190,12 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type in your new password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adz-hW-3vp">
-                                                        <rect key="frame" x="0.0" y="35.666666666666629" width="250" height="18.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="35.666666666666686" width="250" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rk-Ip-lpP">
-                                                        <rect key="frame" x="0.0" y="62.333333333333314" width="250" height="1"/>
+                                                        <rect key="frame" x="0.0" y="60.666666666666686" width="250" height="1"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="Z9b-1I-DzR"/>
@@ -205,14 +207,14 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="75v-Ac-SZD">
-                                                        <rect key="frame" x="0.0" y="71.333333333333314" width="250" height="18.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="69.666666666666686" width="250" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Om-vU-9wE">
-                                                <rect key="frame" x="20" y="120" width="210" height="30"/>
+                                                <rect key="frame" x="20" y="116.66666666666669" width="210" height="30"/>
                                                 <color key="backgroundColor" red="0.17389180169999999" green="0.2881895941" blue="0.54451659230000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Sign up">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,14 +256,14 @@
                                     <navigationItem title="Sign Up" id="Vti-tK-FpN">
                                         <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="BxT-7l-7gv">
                                             <connections>
-                                                <segue destination="Y6W-OH-hqX" kind="presentation" modalPresentationStyle="fullScreen" id="q18-4q-fP5"/>
+                                                <action selector="backButtonClicked:" destination="df9-Ok-qt0" id="2yC-5e-FnN"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdw-O3-Elk">
-                                <rect key="frame" x="178.66666666666666" y="542" width="33" height="15.666666666666629"/>
+                                <rect key="frame" x="178.66666666666666" y="540.33333333333337" width="33" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -282,6 +284,7 @@
                         <outlet property="repeatPasswordField" destination="75v-Ac-SZD" id="iPV-tU-VKl"/>
                         <outlet property="statusLabel" destination="Gdw-O3-Elk" id="1MY-LG-Pgw"/>
                         <outlet property="userField" destination="dXm-Sj-dzd" id="ytt-RN-l3i"/>
+                        <segue destination="Y6W-OH-hqX" kind="presentation" identifier="logInSegue" modalPresentationStyle="fullScreen" id="E5I-Ht-EK8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajb-Vu-sKj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
