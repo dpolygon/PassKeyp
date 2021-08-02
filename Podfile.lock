@@ -43,10 +43,12 @@ PODS:
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
+  - ObjectivePGP (0.17.0)
   - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
   - Firebase/Auth
+  - ObjectivePGP
 
 SPEC REPOS:
   trunk:
@@ -58,6 +60,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - nanopb
+    - ObjectivePGP
     - PromisesObjC
 
 SPEC CHECKSUMS:
@@ -69,8 +72,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
   GTMSessionFetcher: 36689134877faeb055b27dfa4ccc9ceaa42e029e
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  ObjectivePGP: 82492902c036714b4a23ab0474b72d1ddf7ea7bd
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 656d2d55c1521f844bddf60a40c341b6883a2215
+PODFILE CHECKSUM: 8f350a5bb68605645601b452c39ab8ecab1bac01
 
 COCOAPODS: 1.10.1

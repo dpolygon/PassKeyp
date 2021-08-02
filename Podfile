@@ -7,6 +7,7 @@ target 'Passkeyp' do
 
   # Pods for Passkeyp
   pod 'Firebase/Auth'
+  pod 'ObjectivePGP'
   
 # add pods for desired Firebase products
 # https://firebase.google.com/docs/ios/setup#available-pods
