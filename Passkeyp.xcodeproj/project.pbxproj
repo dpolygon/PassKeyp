@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,7 +41,23 @@
 		9489313626B08EF800141394 /* LogInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489313526B08EF800141394 /* LogInStoryboard.storyboard */; };
 		9489313826B08F2F00141394 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489313726B08F2F00141394 /* LogInViewController.swift */; };
 		94D676D326B795150090533E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94D676D226B795150090533E /* GoogleService-Info.plist */; };
+		94D676D526B871E10090533E /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D676D426B871E10090533E /* ObjectiveGit.framework */; };
+		94D676D626B871E10090533E /* ObjectiveGit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94D676D426B871E10090533E /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94D676D726B871E10090533E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				94D676D626B871E10090533E /* ObjectiveGit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4DD8EFBE26A74E9C00E0C4AF /* Passkeyp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passkeyp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +97,7 @@
 		9489313526B08EF800141394 /* LogInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInStoryboard.storyboard; sourceTree = "<group>"; };
 		9489313726B08F2F00141394 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		94D676D226B795150090533E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		94D676D426B871E10090533E /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/iOS/ObjectiveGit.framework; sourceTree = "<group>"; };
 		B944F5A409C5B9DA3065AB40 /* Pods-Passkeyp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Passkeyp.debug.xcconfig"; path = "Target Support Files/Pods-Passkeyp/Pods-Passkeyp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B3C95F04F1C27670189A8E5 /* Pods_Passkeyp.framework in Frameworks */,
+				94D676D526B871E10090533E /* ObjectiveGit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +120,6 @@
 				B944F5A409C5B9DA3065AB40 /* Pods-Passkeyp.debug.xcconfig */,
 				7F17DF06D1344B9B4E8BB3F4 /* Pods-Passkeyp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -192,6 +209,7 @@
 		CF44A338ED6BA11238231AE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94D676D426B871E10090533E /* ObjectiveGit.framework */,
 				569313141E8B0B4BFEB1D631 /* Pods_Passkeyp.framework */,
 			);
 			name = Frameworks;
@@ -209,6 +227,8 @@
 				4DD8EFBB26A74E9C00E0C4AF /* Frameworks */,
 				4DD8EFBC26A74E9C00E0C4AF /* Resources */,
 				122924A93938A0984FB10684 /* [CP] Embed Pods Frameworks */,
+				94D676D726B871E10090533E /* Embed Frameworks */,
+				94D676D826B872260090533E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -314,6 +334,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		94D676D826B872260090533E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectiveGit.framework\n",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -490,6 +528,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y5X54T6NKN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Passkeyp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -510,6 +552,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y5X54T6NKN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Passkeyp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
