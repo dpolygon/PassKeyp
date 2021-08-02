@@ -6,16 +6,69 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
+    private let segueIdentifier = "logInSegue"
+    @IBOutlet weak var userField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var repeatPasswordField: UITextField!
+    @IBOutlet weak var statusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func signInButtonPressed(_ sender: Any) {
+        // check for fields filled
+        guard let user = userField.text, let password = passwordField.text, let passwordRepeat = repeatPasswordField.text, user.count > 0, password.count > 0, passwordRepeat.count > 0 else {
+            statusLabel.text = "Missing field(s)."
+            statusLabel.isHidden = false
+            return
+        }
+        
+        // check for email format
+        guard user.contains("@") && user.contains(".") else {
+            statusLabel.text = "First field must be an email."
+            statusLabel.isHidden = false
+            return
+        }
+        
+        // check for field length
+        guard password.count >= 8 else {
+            statusLabel.text = "Password has to contain at least 8 characters."
+            statusLabel.isHidden = false
+            return
+        }
+        
+        // check for password match
+        guard password == passwordRepeat else {
+            statusLabel.text = "Passwords don't match."
+            statusLabel.isHidden = false
+            return
+        }
+        
+        // create user
+        Auth.auth().createUser(withEmail: user, password: password) { [self] authResult, error in
+            if error == nil {
+                Auth.auth().signIn(withEmail: user, password: password) { [self]
+                    user, error in if error == nil {
+                        performSegue(withIdentifier: segueIdentifier, sender: nil)
+                    }
+                }
+            } else {
+                statusLabel.text = "Unable to create new user."
+                statusLabel.isHidden = false
+            }
+        }
+    }
+    
+    @IBAction func backButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: segueIdentifier, sender: nil)
+    }
     /*
     // MARK: - Navigation
 

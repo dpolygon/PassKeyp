@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsViewController: UITableViewController {
 
@@ -56,7 +57,13 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // code for log out selection
         if indexPath.section == 3 {
-            performSegue(withIdentifier: segueIdentifier, sender: nil)
+            let firebaseAuth = Auth.auth()
+            do {
+              try firebaseAuth.signOut()
+                performSegue(withIdentifier: segueIdentifier, sender: nil)
+            } catch let signOutError as NSError {
+              print("Error signing out: %@", signOutError)
+            }
         }
     }
     /*
