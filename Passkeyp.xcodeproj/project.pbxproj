@@ -41,18 +41,18 @@
 		9489313626B08EF800141394 /* LogInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489313526B08EF800141394 /* LogInStoryboard.storyboard */; };
 		9489313826B08F2F00141394 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489313726B08F2F00141394 /* LogInViewController.swift */; };
 		94D676D326B795150090533E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94D676D226B795150090533E /* GoogleService-Info.plist */; };
-		94D676D526B871E10090533E /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D676D426B871E10090533E /* ObjectiveGit.framework */; };
-		94D676D626B871E10090533E /* ObjectiveGit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94D676D426B871E10090533E /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94D676E726B88FAF0090533E /* ObjectiveGit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D676D426B871E10090533E /* ObjectiveGit.framework */; };
+		94D676E826B88FAF0090533E /* ObjectiveGit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94D676D426B871E10090533E /* ObjectiveGit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		94D676D726B871E10090533E /* Embed Frameworks */ = {
+		94D676E926B88FAF0090533E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				94D676D626B871E10090533E /* ObjectiveGit.framework in Embed Frameworks */,
+				94D676E826B88FAF0090533E /* ObjectiveGit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +98,7 @@
 		9489313726B08F2F00141394 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		94D676D226B795150090533E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		94D676D426B871E10090533E /* ObjectiveGit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveGit.framework; path = Carthage/Build/iOS/ObjectiveGit.framework; sourceTree = "<group>"; };
+		94D676EE26B8966C0090533E /* Passkeyp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Passkeyp-Bridging-Header.h"; sourceTree = "<group>"; };
 		B944F5A409C5B9DA3065AB40 /* Pods-Passkeyp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Passkeyp.debug.xcconfig"; path = "Target Support Files/Pods-Passkeyp/Pods-Passkeyp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B3C95F04F1C27670189A8E5 /* Pods_Passkeyp.framework in Frameworks */,
-				94D676D526B871E10090533E /* ObjectiveGit.framework in Frameworks */,
+				94D676E726B88FAF0090533E /* ObjectiveGit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +164,7 @@
 				94D676D226B795150090533E /* GoogleService-Info.plist */,
 				4DD8EFCA26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld */,
 				4DF3224626A9F921001B8121 /* WebsiteDataController.swift */,
+				94D676EE26B8966C0090533E /* Passkeyp-Bridging-Header.h */,
 			);
 			path = Passkeyp;
 			sourceTree = "<group>";
@@ -227,8 +229,8 @@
 				4DD8EFBB26A74E9C00E0C4AF /* Frameworks */,
 				4DD8EFBC26A74E9C00E0C4AF /* Resources */,
 				122924A93938A0984FB10684 /* [CP] Embed Pods Frameworks */,
-				94D676D726B871E10090533E /* Embed Frameworks */,
 				94D676D826B872260090533E /* ShellScript */,
+				94D676E926B88FAF0090533E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +252,7 @@
 				TargetAttributes = {
 					4DD8EFBD26A74E9C00E0C4AF = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -343,7 +346,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectiveGit.framework\n",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectiveGit.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -526,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y5X54T6NKN;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -539,8 +543,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ezueck.Passkeyp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Passkeyp/Passkeyp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -550,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y5X54T6NKN;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -563,8 +571,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ezueck.Passkeyp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Passkeyp/Passkeyp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
