@@ -8,6 +8,9 @@
 import UIKit
 import Firebase
 
+var currMatchSystem = true
+var currDarkMode = false
+
 class SettingsViewController: UITableViewController {
 
     private let segueIdentifier = "logInIdentifier"
@@ -27,30 +30,35 @@ class SettingsViewController: UITableViewController {
         darkModeSwitch.onTintColor = accentColor
         faqButton.setTitleColor(accentColor, for: .normal)
         aboutButton.setTitleColor(accentColor, for: .normal)
+        
+        // set switches to current settings
+        matchSystemSwitch.setOn(currMatchSystem, animated: false)
+        darkModeSwitch.setOn(currDarkMode, animated: false)
     }
     
     @IBAction func matchChanged(_ sender: Any) {
         if matchSystemSwitch.isOn {
-            darkModeSwitch.isOn = false
-            let current = UITraitCollection.current.userInterfaceStyle
-            view.window?.overrideUserInterfaceStyle = current
-            overrideUserInterfaceStyle = current
+            // cannot both be on
+            currMatchSystem = true
+            darkModeSwitch.setOn(false, animated: true)
+            darkModeSwitch.sendActions(for: .valueChanged)// this line will run changeToMode(true, false)
         } else {
-            // default to light
-            view.window?.overrideUserInterfaceStyle = .light
-            overrideUserInterfaceStyle = .light
+            // default to light mode
+            currMatchSystem = false
+            changeToMode(matchBool: currMatchSystem, darkBool: currDarkMode)
         }
     }
     
     @IBAction func darkChanged(_ sender: Any) {
         if darkModeSwitch.isOn {
             // cannot have both turned on
-            matchSystemSwitch.isOn = false
-            view.window?.overrideUserInterfaceStyle = .dark
-            overrideUserInterfaceStyle = .dark
+            currDarkMode = true
+            matchSystemSwitch.setOn(false, animated: true)
+            matchSystemSwitch.sendActions(for: .valueChanged)// this line will run changeToMode(false, true)
         } else {
-            view.window?.overrideUserInterfaceStyle = .light
-            overrideUserInterfaceStyle = .light
+            // default value of match
+            currDarkMode = false
+            changeToMode(matchBool: currMatchSystem, darkBool: currDarkMode)
         }
     }
     
@@ -66,6 +74,20 @@ class SettingsViewController: UITableViewController {
             }
         }
     }
+    
+    func changeToMode(matchBool: Bool, darkBool: Bool){
+        var style : UIUserInterfaceStyle!
+        if matchBool {
+            style = UITraitCollection.current.userInterfaceStyle
+        } else if darkBool {
+            style = UIUserInterfaceStyle.dark
+        } else {
+            style = UIUserInterfaceStyle.light
+        }
+        view.window?.overrideUserInterfaceStyle = style
+        overrideUserInterfaceStyle = style
+    }
+    
     /*
     // MARK: - Navigation
 

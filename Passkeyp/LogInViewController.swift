@@ -8,6 +8,7 @@
 import UIKit
 import LocalAuthentication
 import Firebase
+import CoreData
 
 var context = LAContext()
 
@@ -15,22 +16,43 @@ enum AuthenticationState {
     case loggedin, loggedout
 }
 
+var testUser : String! = nil
+
 class LogInViewController: UIViewController {
     
+    private let entityName = "ModeSettings"
     private let segueIdentifier = "homeScreenSegue"
     @IBOutlet weak var faceIDButton: UIButton!
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var statusLabel: UILabel!
-    var state = AuthenticationState.loggedout {
+    var state : AuthenticationState? {
         didSet {
             // do stuff if changed to .loggedIn
-            print(state)
             if state == .loggedin {
                 // segue to home screen
-                // obtain user core data ?
+                // obtain user core data
+                if let settings = retrieveSettings() {
+                    // settings already defined for this user
+                    printSettings(settings: settings)
+                    initSettings(settings: settings)
+                } else {
+                    // create core data for new user with defaults
+                    storeSettingsData(user: testUser, matchSystem: true, darkMode: false, accent: UIColor.blue)
+                }
                 performSegue(withIdentifier: segueIdentifier, sender: nil)
+            } else if (state == .loggedout && testUser != nil) {
+                // user logged out
+                // save changes to settings
+                guard let oldSettings = retrieveSettings() else {
+                    print("Settings should already exist. This shouldn't happen.")
+                    return
+                }
+                changeSettings(settings: oldSettings, matchSystem: currMatchSystem, darkMode: currDarkMode, accent: accentColor)
+                print("LOGGED OUT WITH VALUES")
+                printSettings(settings: retrieveSettings()!)
+                testUser = nil
             }
         }
     }
@@ -47,12 +69,14 @@ class LogInViewController: UIViewController {
           auth, user in
           
           if user != nil {
+            testUser = Auth.auth().currentUser?.uid
             self.state = .loggedin
           }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // user isn't logged in
         state = .loggedout
         faceIDButton.isHidden = faceIDHidden
     }
@@ -112,6 +136,101 @@ class LogInViewController: UIViewController {
                 self.statusLabel.isHidden = false
             }
         }
+    }
+    
+    // functions to retrieve and store user settings from core data when logged in
+    func storeSettingsData(user: String, matchSystem: Bool, darkMode: Bool, accent: UIColor) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let settings = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
+        
+        settings.setValue(user, forKey: "userUID")
+        settings.setValue(matchSystem, forKey: "matchSystem")
+        settings.setValue(darkMode, forKey: "darkMode")
+        settings.setValue(accent, forKey: "accentColor")
+        
+        do {
+            try context.save()
+        } catch {
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+    }
+    
+    func retrieveSettings() -> NSManagedObject? {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        
+        let predicate = NSPredicate(format: "userUID == %@", testUser)
+        request.predicate = predicate
+        
+        do {
+            let fetchedResult = try context.fetch(request)
+            if fetchedResult.count == 0 {
+                return nil
+            } else {
+                return fetchedResult[0] as? NSManagedObject
+            }
+        } catch {
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
+    func printSettings(settings: NSManagedObject) {
+        let user = settings.value(forKey: "userUID")
+        let matchSystem = settings.value(forKey: "matchSystem")
+        let darkMode = settings.value(forKey: "darkMode")
+        let color = settings.value(forKey: "accentColor")
+        print("Settings for user \(user!): \(matchSystem!), \(darkMode!), \(color!)")
+    }
+    
+    func initSettings(settings: NSManagedObject) {
+        guard let matchSystem = settings.value(forKey: "matchSystem"), let darkMode = settings.value(forKey: "darkMode"), let color = settings.value(forKey: "accentColor") else {
+            return
+        }
+    
+        currMatchSystem = matchSystem as! Bool
+        currDarkMode = darkMode as! Bool
+        changeToMode(matchBool: currMatchSystem, darkBool: currDarkMode)
+        
+        accentColor = color as! UIColor
+    }
+    
+    func changeSettings(settings: NSManagedObject, matchSystem: Bool, darkMode: Bool, accent: UIColor){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        settings.setValue(matchSystem, forKey: "matchSystem")
+        settings.setValue(darkMode, forKey: "darkMode")
+        settings.setValue(accent, forKey: "accentColor")
+        
+        do {
+            try context.save()
+        } catch {
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
+    func changeToMode(matchBool: Bool, darkBool: Bool){
+        var style : UIUserInterfaceStyle!
+        if matchBool {
+            style = UITraitCollection.current.userInterfaceStyle
+        } else if darkBool {
+            style = UIUserInterfaceStyle.dark
+        } else {
+            style = UIUserInterfaceStyle.light
+        }
+        view.window?.overrideUserInterfaceStyle = style
+        overrideUserInterfaceStyle = style
     }
     
     /*
