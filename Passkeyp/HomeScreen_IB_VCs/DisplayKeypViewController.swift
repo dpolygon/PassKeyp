@@ -77,6 +77,7 @@ class DisplayKeypViewController: UITableViewController {
         WebsiteDataController.controller.deleteWebsite(website: keypDataObject!)
         let otherVC = delegate as! HomeScreenViewController
         otherVC.deleteKeypAndUpdate()
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {

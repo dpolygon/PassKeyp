@@ -138,7 +138,7 @@
                         <outlet property="passwordField" destination="fbN-Jf-4Gs" id="nZJ-3q-agz"/>
                         <outlet property="statusLabel" destination="99D-IK-dA7" id="L1z-TK-X5G"/>
                         <outlet property="userField" destination="knf-kT-fkt" id="Ov3-Bw-W8K"/>
-                        <segue destination="ZcC-cO-ya5" kind="presentation" identifier="homeScreenSegue" modalPresentationStyle="fullScreen" id="gPl-4a-jTi"/>
+                        <segue destination="ZcC-cO-ya5" kind="presentation" identifier="homeScreenSegue" modalPresentationStyle="currentContext" id="gPl-4a-jTi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -153,7 +153,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ax6-hf-eIx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1743.0769230769231" y="-113.03317535545023"/>
+            <point key="canvasLocation" x="1520" y="258"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="6Mv-WZ-Ynv">
@@ -289,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ajb-Vu-sKj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2169.2307692307691" y="322.74881516587675"/>
+            <point key="canvasLocation" x="2357" y="48"/>
         </scene>
     </scenes>
     <resources>
