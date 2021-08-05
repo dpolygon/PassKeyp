@@ -293,7 +293,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1910.144927536232" y="-155.35714285714286"/>
+            <point key="canvasLocation" x="1842" y="-155"/>
         </scene>
         <!--Keyp-->
         <scene sceneID="Ovw-iY-n2j">
@@ -318,6 +318,9 @@
                                     <state key="normal" title="Delete Keyp">
                                         <color key="titleColor" systemColor="systemRedColor"/>
                                     </state>
+                                    <connections>
+                                        <action selector="deleteKeypPressed:" destination="1WC-Js-pcQ" eventType="touchUpInside" id="Ens-48-M1G"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OB-2P-eLf">
                                     <rect key="frame" x="128" y="8" width="158" height="53"/>
@@ -429,7 +432,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="eV7-aD-A7J"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="deleteButton" destination="Z8I-BU-AT3" id="ZvP-7w-gfb"/>
+                        <outlet property="deleteButton" destination="Z8I-BU-AT3" id="9FB-n1-exz"/>
                         <outlet property="editSaveButton" destination="7OB-2P-eLf" id="RVP-AO-CU7"/>
                         <outlet property="hideButton" destination="UM7-gS-djS" id="QBq-nv-NRW"/>
                         <outlet property="keypTableView" destination="A0A-WQ-PWJ" id="esV-b4-Ira"/>
