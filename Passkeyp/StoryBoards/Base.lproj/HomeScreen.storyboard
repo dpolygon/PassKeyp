@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="204" width="414" height="609"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGS-eZ-GCT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="520"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvQ-3w-oe4">
                                                 <rect key="frame" x="8" y="0.0" width="91" height="24"/>
@@ -177,7 +177,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="hhg-Xp-Gu0" firstAttribute="bottom" secondItem="oGS-eZ-GCT" secondAttribute="bottom" constant="145" id="BCt-2d-5yj"/>
+                                            <constraint firstItem="hhg-Xp-Gu0" firstAttribute="bottom" secondItem="oGS-eZ-GCT" secondAttribute="bottom" constant="41" id="BCt-2d-5yj"/>
                                             <constraint firstItem="Q8S-aH-zEK" firstAttribute="leading" secondItem="oGS-eZ-GCT" secondAttribute="leading" constant="8" id="BNt-Lb-ZRQ"/>
                                             <constraint firstItem="1sR-iD-8Xe" firstAttribute="top" secondItem="vvQ-3w-oe4" secondAttribute="bottom" constant="-1" id="BgM-Cf-yrG"/>
                                             <constraint firstItem="vvQ-3w-oe4" firstAttribute="top" secondItem="oGS-eZ-GCT" secondAttribute="top" id="D5b-KN-ZHS"/>
@@ -189,14 +189,14 @@
                                             <constraint firstItem="1sR-iD-8Xe" firstAttribute="leading" secondItem="oGS-eZ-GCT" secondAttribute="leading" id="RP7-u8-tca"/>
                                             <constraint firstItem="hhg-Xp-Gu0" firstAttribute="trailing" secondItem="oGS-eZ-GCT" secondAttribute="trailing" id="aXf-ga-ht5"/>
                                             <constraint firstItem="vvQ-3w-oe4" firstAttribute="leading" secondItem="oGS-eZ-GCT" secondAttribute="leading" constant="8" id="m82-IF-5l6"/>
-                                            <constraint firstAttribute="height" constant="520" id="qiq-6S-idg"/>
+                                            <constraint firstAttribute="height" constant="624" id="qiq-6S-idg"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="oGS-eZ-GCT" firstAttribute="trailing" secondItem="dJp-sj-Bc8" secondAttribute="trailing" id="BM9-p4-HmQ"/>
                                     <constraint firstItem="oGS-eZ-GCT" firstAttribute="leading" secondItem="dJp-sj-Bc8" secondAttribute="leading" id="DpT-cb-UIo"/>
-                                    <constraint firstItem="oGS-eZ-GCT" firstAttribute="bottom" secondItem="dJp-sj-Bc8" secondAttribute="bottom" constant="-150" id="MIo-X7-EFn"/>
+                                    <constraint firstItem="oGS-eZ-GCT" firstAttribute="bottom" secondItem="dJp-sj-Bc8" secondAttribute="bottom" constant="-46" id="MIo-X7-EFn"/>
                                     <constraint firstItem="oGS-eZ-GCT" firstAttribute="width" secondItem="mil-b3-fAF" secondAttribute="width" id="dDq-ls-vv5"/>
                                     <constraint firstItem="oGS-eZ-GCT" firstAttribute="top" secondItem="dJp-sj-Bc8" secondAttribute="top" id="gtl-0m-vKs"/>
                                 </constraints>
@@ -293,7 +293,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1842" y="-155"/>
+            <point key="canvasLocation" x="1840.5797101449277" y="-155.35714285714286"/>
         </scene>
         <!--Keyp-->
         <scene sceneID="Ovw-iY-n2j">
@@ -405,6 +405,7 @@
                                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pru-ps-YwT">
                                                     <rect key="frame" x="117" y="7" width="210" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="textColor" systemColor="systemGray3Color"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>

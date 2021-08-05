@@ -19,6 +19,7 @@ class DisplayKeypViewController: UITableViewController {
     @IBOutlet weak var editSaveButton: UIButton!
     var delegate: UIViewController?
     var keypDataObject: NSManagedObject?
+    let pasteboard = UIPasteboard.general
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +35,27 @@ class DisplayKeypViewController: UITableViewController {
     }
     
     @IBAction func hideButtonPressed(_ sender: Any) {
-        passwordField.textColor = passwordField.isSecureTextEntry == true ? UIColor.systemGray3 : UIColor.black
         passwordField.isSecureTextEntry = passwordField.isSecureTextEntry == true ? false : true
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            let url = URL(string: "https://www.google.com/search?q=\(String(describing: websiteField.text!))")
+            UIApplication.shared.open(url!)
+            break
+        case 1:
+            pasteboard.string = usernameField.text
+            break
+        case 2:
+            pasteboard.string = passwordField.text
+            break
+        default:
+            break
+        }
+    }
+    
     @IBAction func editPressed(_ sender: Any) {
         let editable = websiteField.isUserInteractionEnabled == false ? true : false
         if editable == true {
@@ -47,6 +66,7 @@ class DisplayKeypViewController: UITableViewController {
             editSaveButton.setTitle("Edit", for: .normal)
             passwordField.isSecureTextEntry = true
             hideButton.isUserInteractionEnabled = true
+            WebsiteDataController.controller.updateKeyp(website: keypDataObject, websiteName: websiteField.text!, username: usernameField.text!, password: passwordField.text!)
         }
         websiteField.isUserInteractionEnabled = editable
         usernameField.isUserInteractionEnabled = editable
@@ -66,15 +86,4 @@ class DisplayKeypViewController: UITableViewController {
                     keypTableView.backgroundColor = UIColor.white
                 }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

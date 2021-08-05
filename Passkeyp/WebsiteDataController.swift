@@ -34,7 +34,7 @@ class WebsiteDataController {
     }
     
     // Updates the same current Website data that is being created to new user specifications in Core Data
-    func updateOrder(website: NSManagedObject?, websiteName: String, username: String, password: String) {
+    func updateKeyp(website: NSManagedObject?, websiteName: String, username: String, password: String) {
         if let website = website {
             website.setValue(websiteName, forKey: "websiteName")
             website.setValue(username, forKey: "username")
