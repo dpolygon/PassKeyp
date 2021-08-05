@@ -22,7 +22,7 @@ class AccentColorPickerViewController: UIViewController {
     }
     
     @IBAction func blueSelected(_ sender: Any) {
-        accentColor = UIColor.blue
+        accentColor = UIColor.systemBlue
         previewImage.image = UIImage(named: imageNames.blue)
     }
     
@@ -32,24 +32,22 @@ class AccentColorPickerViewController: UIViewController {
     }
     
     @IBAction func greenSelected(_ sender: Any) {
-        accentColor = UIColor.green
+        accentColor = UIColor.systemGreen
         previewImage.image = UIImage(named: imageNames.green)
     }
     
-    
     @IBAction func redSelected(_ sender: Any) {
-        accentColor = UIColor.red
+        accentColor = UIColor.systemRed
         previewImage.image = UIImage(named: imageNames.red)
     }
     
-    
     @IBAction func orangeSelected(_ sender: Any) {
-        accentColor = UIColor.orange
+        accentColor = UIColor.systemOrange
         previewImage.image = UIImage(named: imageNames.orange)
     }
     
     @IBAction func yellowSelected(_ sender: Any) {
-        accentColor = UIColor.yellow
+        accentColor = UIColor.systemYellow
         previewImage.image = UIImage(named: imageNames.yellow)
     }
     

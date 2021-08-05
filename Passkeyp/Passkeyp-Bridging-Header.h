@@ -8,6 +8,6 @@
 #ifndef Passkeyp_Brigding_Header_h
 #define Passkeyp_Brigding_Header_h
 
-@import ObjectiveGit;
+//@import ObjectiveGit;
 
 #endif /* Passkeyp_Brigding_Header_h */

@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '13.2'
+# platform :ios, '9.0'
 
 target 'Passkeyp' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -8,8 +8,5 @@ target 'Passkeyp' do
   # Pods for Passkeyp
   pod 'Firebase/Auth'
   pod 'ObjectivePGP'
-  
-# add pods for desired Firebase products
-# https://firebase.google.com/docs/ios/setup#available-pods
 
 end
