@@ -95,11 +95,11 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! websiteCollectionViewCell
             cell.layer.cornerRadius = 16
             let website = websiteCollection![indexPath.row] as! Website
-            cell.imageView.setImage(string: website.websiteName?.lowercased(), color: accentColor, circular: false, stroke: false)
+            cell.imageView.setImage(string: website.websiteName?.lowercased(), color: ModeSettingDataController.controller.getUserAccentColor(), circular: false, stroke: false)
             cell.imageView.layer.cornerRadius = 16
             cell.titleLabel.text = website.websiteName
             cell.captionLabel.text = website.username
-            cell.blurredView.backgroundColor = accentColor
+            cell.blurredView.backgroundColor = ModeSettingDataController.controller.getUserAccentColor()
             return cell
         }
     }
@@ -157,7 +157,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        creationButton.tintColor = accentColor
+        creationButton.tintColor = ModeSettingDataController.controller.getUserAccentColor()
         websiteCollectionView.reloadData()
     }
     

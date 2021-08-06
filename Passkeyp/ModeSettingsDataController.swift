@@ -15,7 +15,7 @@ class ModeSettingDataController {
     // Controller allows you to interact with Core Data functions
     static let controller = ModeSettingDataController()
     
-    var entityName = "modeSetting"
+    var entityName = "ModeSettings"
     var appDelegate: AppDelegate
     var context: NSManagedObjectContext
     var userSettings: NSManagedObject!
@@ -23,11 +23,13 @@ class ModeSettingDataController {
     init() {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
-        var fetchResult = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        if fetchResult[0] == nil {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        var fetchedResult: [NSManagedObject]? = nil
+        do {
+            try fetchedResult = context.fetch(request) as? [NSManagedObject]
+            userSettings = fetchedResult![0]
+        } catch {
             userSettings = createUserSettings()
-        } else {
-            userSettings = fetchResult[0]
         }
     }
     
@@ -50,7 +52,7 @@ class ModeSettingDataController {
     }
     
     func getUserAccentColor() -> UIColor {
-        let capturedSetting = userSettings as! ModeSetting
+        let capturedSetting = userSettings as! ModeSettings
         return capturedSetting.accentColor as! UIColor
     }
     

@@ -22,32 +22,32 @@ class AccentColorPickerViewController: UIViewController {
     }
     
     @IBAction func blueSelected(_ sender: Any) {
-        accentColor = UIColor.systemBlue
+        ModeSettingDataController.controller.setUserAccentColor(accentColor: UIColor.systemBlue)
         previewImage.image = UIImage(named: imageNames.blue)
     }
     
     @IBAction func tealSelected(_ sender: Any) {
-        accentColor = UIColor.systemTeal
+        ModeSettingDataController.controller.setUserAccentColor(accentColor: UIColor.systemTeal)
         previewImage.image = UIImage(named: imageNames.teal)
     }
     
     @IBAction func greenSelected(_ sender: Any) {
-        accentColor = UIColor.systemGreen
+        ModeSettingDataController.controller.setUserAccentColor(accentColor: UIColor.systemGreen)
         previewImage.image = UIImage(named: imageNames.green)
     }
     
     @IBAction func redSelected(_ sender: Any) {
-        accentColor = UIColor.systemRed
+        ModeSettingDataController.controller.setUserAccentColor(accentColor: UIColor.systemRed)
         previewImage.image = UIImage(named: imageNames.red)
     }
     
     @IBAction func orangeSelected(_ sender: Any) {
-        accentColor = UIColor.systemOrange
+        ModeSettingDataController.controller.setUserAccentColor(accentColor: UIColor.systemOrange)
         previewImage.image = UIImage(named: imageNames.orange)
     }
     
     @IBAction func yellowSelected(_ sender: Any) {
-        accentColor = UIColor.systemYellow
+        ModeSettingDataController.controller.setUserAccentColor(accentColor: UIColor.systemYellow)
         previewImage.image = UIImage(named: imageNames.yellow)
     }
     
