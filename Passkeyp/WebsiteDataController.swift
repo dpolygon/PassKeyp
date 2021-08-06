@@ -56,6 +56,19 @@ class WebsiteDataController {
         return fetchedResults
     }
     
+    func searchKeyps(contains: String) -> [NSManagedObject]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let pred = NSPredicate(format: "websiteName CONTAINS[c] '\(contains)'")
+        request.predicate = pred
+        var fetchedResults: [NSManagedObject]? = nil
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            runErrorMessage(error: error, message: "an error has occurred when attempting to retrieve websites")
+        }
+        return fetchedResults
+    }
+    
     // Deletes a specified 'website' from Core Data
     func deleteWebsite(website: NSManagedObject) {
         context.delete(website)

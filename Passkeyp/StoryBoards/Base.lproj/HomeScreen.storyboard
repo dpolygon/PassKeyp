@@ -203,7 +203,7 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="dJp-sj-Bc8"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="mil-b3-fAF"/>
                             </scrollView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Website" translatesAutoresizingMaskIntoConstraints="NO" id="GV0-Zx-rDV">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Website" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GV0-Zx-rDV">
                                 <rect key="frame" x="0.0" y="153" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
@@ -277,6 +277,7 @@
                     <connections>
                         <outlet property="categoryCollectionView" destination="1sR-iD-8Xe" id="wO3-ZB-chU"/>
                         <outlet property="creationButton" destination="0gb-Jd-NcK" id="WBY-rp-BrP"/>
+                        <outlet property="searchKeypBar" destination="GV0-Zx-rDV" id="BlG-ci-b9N"/>
                         <outlet property="userPicture" destination="WY2-iS-gfv" id="fqA-pX-HDs"/>
                         <outlet property="websiteCollectionView" destination="hhg-Xp-Gu0" id="UoH-Ow-Ohb"/>
                     </connections>

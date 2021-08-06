@@ -16,8 +16,9 @@ protocol updateDataRemotely {
     func deleteKeypAndUpdate()
 }
 
-class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, updateDataRemotely {
-    
+class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, updateDataRemotely {
+
+    @IBOutlet weak var searchKeypBar: UISearchBar!
     @IBOutlet weak var websiteCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var creationButton: UIButton!
@@ -34,6 +35,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         websiteCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         websiteCollectionView.dataSource = self
+        searchKeypBar.delegate = self
         userPicture.layer.cornerRadius = 20
         setUpGestures()
     }
@@ -42,6 +44,17 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(recognizeLongPressOnCreationButton(recognizer:)))
         longPressRecognizer.minimumPressDuration = 0.15
         creationButton.addGestureRecognizer(longPressRecognizer)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        websiteCollection = WebsiteDataController.controller.searchKeyps(contains: searchText)
+        websiteCollectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        websiteCollection = WebsiteDataController.controller.retrieveWebsites()
+        websiteCollectionView.reloadData()
+
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -169,3 +182,4 @@ class categoryCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate
     @IBOutlet weak var categoryLabel: UILabel!
     
 }
+
