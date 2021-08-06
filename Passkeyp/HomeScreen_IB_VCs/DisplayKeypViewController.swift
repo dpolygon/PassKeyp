@@ -80,6 +80,12 @@ class DisplayKeypViewController: UITableViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let myKeyp = "Keyp for \(websiteField.text!)\nuser: \(usernameField.text!)\npassword: \(passwordField.text!)"
+        let shareSheetVC = UIActivityViewController(activityItems: [myKeyp], applicationActivities: nil)
+        present(shareSheetVC, animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         if self.traitCollection.userInterfaceStyle == .dark {
             keypTableView.backgroundColor = UIColor.black

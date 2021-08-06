@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Allow usage of Face ID as log in mechanism.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Needed to customize pfp</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

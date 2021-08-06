@@ -4,6 +4,8 @@
         <attribute name="accentColor" optional="YES" attributeType="Transformable"/>
         <attribute name="darkMode" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="matchSystem" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <attribute name="userPFP" optional="YES" attributeType="Binary"/>
         <attribute name="userUID" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Website" representedClassName="Website" syncable="YES" codeGenerationType="class">
@@ -12,7 +14,7 @@
         <attribute name="websiteName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ModeSettings" positionX="-63" positionY="9" width="128" height="89"/>
+        <element name="ModeSettings" positionX="-63" positionY="9" width="128" height="119"/>
         <element name="Website" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>

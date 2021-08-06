@@ -16,13 +16,14 @@ protocol updateDataRemotely {
     func deleteKeypAndUpdate()
 }
 
-class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, updateDataRemotely {
+class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, updateDataRemotely {
 
     @IBOutlet weak var searchKeypBar: UISearchBar!
     @IBOutlet weak var websiteCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var creationButton: UIButton!
     @IBOutlet weak var userPicture: UIImageView!
+    let picker = UIImagePickerController()
     
     var categoryCellIdentifier = "keypCategoryCell"
     var cellIdentifier = "keypContentCell"
@@ -36,8 +37,27 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         categoryCollectionView.dataSource = self
         websiteCollectionView.dataSource = self
         searchKeypBar.delegate = self
+        picker.delegate = self
         userPicture.layer.cornerRadius = 20
         setUpGestures()
+    }
+    
+    @IBAction func userPFPTapped(_ sender: Any) {
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        present(picker, animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let chosenImage = info[.editedImage] as! UIImage
+        
+        userPicture.image = chosenImage
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+        print("User cancelled")
     }
     
     func setUpGestures() {

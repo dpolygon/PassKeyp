@@ -211,12 +211,16 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserPFP" translatesAutoresizingMaskIntoConstraints="NO" id="WY2-iS-gfv">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserPFP" translatesAutoresizingMaskIntoConstraints="NO" id="WY2-iS-gfv">
                                 <rect key="frame" x="20" y="101" width="50" height="50"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="NdQ-ql-RP9"/>
                                     <constraint firstAttribute="width" constant="50" id="dSZ-vD-H1Q"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="a38-ej-Zr7" appends="YES" id="rOQ-pK-BzT"/>
+                                </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="cD7-pg-sih">
                                 <rect key="frame" x="78" y="101" width="122.66666666666669" height="43.666666666666657"/>
@@ -293,6 +297,11 @@
                         <action selector="recognizeLongPressOnCreationButtonWithRecognizer:" destination="BYZ-38-t0r" id="Kym-em-XaJ"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="a38-ej-Zr7">
+                    <connections>
+                        <action selector="userPFPTapped:" destination="BYZ-38-t0r" id="glq-5Q-Jpe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1840.5797101449277" y="-155.35714285714286"/>
         </scene>
@@ -431,7 +440,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Keyp" id="e43-35-HAy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="eV7-aD-A7J"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="eV7-aD-A7J">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="1WC-Js-pcQ" id="CFG-kZ-IIC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="deleteButton" destination="Z8I-BU-AT3" id="9FB-n1-exz"/>
@@ -445,7 +458,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uux-QS-Afy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2781" y="-155"/>
+            <point key="canvasLocation" x="2686" y="-155"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1C2-tW-bbQ">
@@ -632,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVq-Y9-7Wk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910" y="587"/>
+            <point key="canvasLocation" x="1841" y="586"/>
         </scene>
         <!--Item-->
         <scene sceneID="BKJ-k7-L64">
@@ -655,7 +668,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UserPFP" width="436" height="425"/>
+        <image name="UserPFP" width="256" height="256"/>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
