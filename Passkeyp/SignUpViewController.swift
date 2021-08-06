@@ -11,6 +11,7 @@ import Firebase
 class SignUpViewController: UIViewController {
 
     private let segueIdentifier = "logInSegue"
+    @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var repeatPasswordField: UITextField!
@@ -26,6 +27,13 @@ class SignUpViewController: UIViewController {
         // check for fields filled
         guard let user = userField.text, let password = passwordField.text, let passwordRepeat = repeatPasswordField.text, user.count > 0, password.count > 0, passwordRepeat.count > 0 else {
             statusLabel.text = "Missing field(s)."
+            statusLabel.isHidden = false
+            return
+        }
+        
+        // check for name
+        guard nameField.text != "" else {
+            statusLabel.text = "Please enter a name"
             statusLabel.isHidden = false
             return
         }
@@ -50,6 +58,9 @@ class SignUpViewController: UIViewController {
             statusLabel.isHidden = false
             return
         }
+        
+        // save user name in modeSettings
+        ModeSettingDataController.controller.setUserName(name: nameField.text!)
         
         // create user
         Auth.auth().createUser(withEmail: user, password: password) { [self] authResult, error in

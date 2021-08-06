@@ -25,42 +25,27 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var faceIDButton: UIButton!
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    let userSettings = ModeSettingDataController.controller
+    
     
     @IBOutlet weak var statusLabel: UILabel!
     var state : AuthenticationState? {
         didSet {
             // do stuff if changed to .loggedIn
             if state == .loggedin {
+                // set UIStyle
+                changeToMode(matchBool: userSettings.getMatchSystem(), darkBool: userSettings.getUserDarkMode())
                 // segue to home screen
-                // obtain user core data
-                if let settings = retrieveSettings() {
-                    // settings already defined for this user
-                    printSettings(settings: settings)
-                    initSettings(settings: settings)
-                } else {
-                    // create core data for new user with defaults
-                    storeSettingsData(user: testUser, matchSystem: true, darkMode: false, accent: UIColor.blue)
-                }
                 performSegue(withIdentifier: segueIdentifier, sender: nil)
             } else if (state == .loggedout && testUser != nil) {
                 // user logged out
-                // save changes to settings
-                guard let oldSettings = retrieveSettings() else {
-                    print("Settings should already exist. This shouldn't happen.")
-                    return
-                }
-                changeSettings(settings: oldSettings, matchSystem: currMatchSystem, darkMode: currDarkMode, accent: accentColor)
-                print("LOGGED OUT WITH VALUES")
-                printSettings(settings: retrieveSettings()!)
-                testUser = nil
+                userSettings.printSettings()
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         // check for ability to use face ID
         context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
@@ -135,88 +120,6 @@ class LogInViewController: UIViewController {
                 self.statusLabel.text = "No biometry available on device."
                 self.statusLabel.isHidden = false
             }
-        }
-    }
-    
-    // functions to retrieve and store user settings from core data when logged in
-    func storeSettingsData(user: String, matchSystem: Bool, darkMode: Bool, accent: UIColor) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let settings = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
-        
-        settings.setValue(user, forKey: "userUID")
-        settings.setValue(matchSystem, forKey: "matchSystem")
-        settings.setValue(darkMode, forKey: "darkMode")
-        settings.setValue(accent, forKey: "accentColor")
-        
-        do {
-            try context.save()
-        } catch {
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
-        }
-        
-    }
-    
-    func retrieveSettings() -> NSManagedObject? {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        
-        let predicate = NSPredicate(format: "userUID == %@", testUser)
-        request.predicate = predicate
-        
-        do {
-            let fetchedResult = try context.fetch(request)
-            if fetchedResult.count == 0 {
-                return nil
-            } else {
-                return fetchedResult[0] as? NSManagedObject
-            }
-        } catch {
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
-        }
-    }
-    
-    func printSettings(settings: NSManagedObject) {
-        let user = settings.value(forKey: "userUID")
-        let matchSystem = settings.value(forKey: "matchSystem")
-        let darkMode = settings.value(forKey: "darkMode")
-        let color = settings.value(forKey: "accentColor")
-        print("Settings for user \(user!): \(matchSystem!), \(darkMode!), \(color!)")
-    }
-    
-    func initSettings(settings: NSManagedObject) {
-        guard let matchSystem = settings.value(forKey: "matchSystem"), let darkMode = settings.value(forKey: "darkMode"), let color = settings.value(forKey: "accentColor") else {
-            return
-        }
-    
-        currMatchSystem = matchSystem as! Bool
-        currDarkMode = darkMode as! Bool
-        changeToMode(matchBool: currMatchSystem, darkBool: currDarkMode)
-        
-        accentColor = color as! UIColor
-    }
-    
-    func changeSettings(settings: NSManagedObject, matchSystem: Bool, darkMode: Bool, accent: UIColor){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        settings.setValue(matchSystem, forKey: "matchSystem")
-        settings.setValue(darkMode, forKey: "darkMode")
-        settings.setValue(accent, forKey: "accentColor")
-        
-        do {
-            try context.save()
-        } catch {
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
         }
     }
     

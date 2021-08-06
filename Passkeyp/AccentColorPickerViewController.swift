@@ -7,8 +7,6 @@
 
 import UIKit
 
-var accentColor: UIColor = UIColor.blue
-
 class AccentColorPickerViewController: UIViewController {
     
     private let imageNames = (blue: "BlueAccent", red: "RedAccent", teal: "TealAccent", green: "GreenAccent", orange: "OrangeAccent", yellow: "YellowAccent")

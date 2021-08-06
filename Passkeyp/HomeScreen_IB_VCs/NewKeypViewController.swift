@@ -36,8 +36,9 @@ class NewKeypViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        saveButton.backgroundColor = accentColor
-        closeCardButton.tintColor = accentColor
+        let uIColor = ModeSettingDataController.controller.getUserAccentColor()
+        saveButton.backgroundColor = uIColor
+        closeCardButton.tintColor = uIColor
     }
     
     // code to enable tapping on the background to remove software keyboard

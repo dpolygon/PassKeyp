@@ -21,8 +21,9 @@ class SignInPreferencesViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        faceIDSwitch.onTintColor = accentColor
-        passwordSwitch.onTintColor = accentColor
+        let uIColor = ModeSettingDataController.controller.getUserAccentColor()
+        faceIDSwitch.onTintColor = uIColor
+        passwordSwitch.onTintColor = uIColor
     }
     
     @IBAction func requirePasswordChanged(_ sender: Any) {

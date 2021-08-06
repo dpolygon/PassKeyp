@@ -14,6 +14,8 @@ class EditWeakWebsiteViewController: UIViewController {
     @IBOutlet weak var separatorLine2: UIView!
     @IBOutlet weak var saveButton: UIButton!
     
+    let uIColor = ModeSettingDataController.controller.getUserAccentColor()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +23,10 @@ class EditWeakWebsiteViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        deleteButton.backgroundColor = accentColor
-        separatorLine2.backgroundColor = accentColor
-        separatorLine1.backgroundColor = accentColor
-        saveButton.backgroundColor = accentColor
+        deleteButton.backgroundColor = uIColor
+        separatorLine2.backgroundColor = uIColor
+        separatorLine1.backgroundColor = uIColor
+        saveButton.backgroundColor = uIColor
     }
     
     @IBAction func savePressed(_ sender: Any) {

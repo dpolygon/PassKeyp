@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -245,7 +244,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0gb-Jd-NcK" secondAttribute="height" multiplier="1:1" id="zQs-lE-Ijq"/>
                                 </constraints>
-                                <color key="tintColor" name="AccentColor"/>
                                 <state key="normal">
                                     <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50" scale="large"/>
@@ -282,6 +280,7 @@
                         <outlet property="categoryCollectionView" destination="1sR-iD-8Xe" id="wO3-ZB-chU"/>
                         <outlet property="creationButton" destination="0gb-Jd-NcK" id="WBY-rp-BrP"/>
                         <outlet property="searchKeypBar" destination="GV0-Zx-rDV" id="BlG-ci-b9N"/>
+                        <outlet property="userName" destination="baC-he-GRe" id="NgT-eU-L2M"/>
                         <outlet property="userPicture" destination="WY2-iS-gfv" id="fqA-pX-HDs"/>
                         <outlet property="websiteCollectionView" destination="hhg-Xp-Gu0" id="UoH-Ow-Ohb"/>
                     </connections>
@@ -335,7 +334,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OB-2P-eLf">
                                     <rect key="frame" x="128" y="8" width="158" height="53"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" name="AccentColor"/>
+                                    <color key="backgroundColor" systemColor="placeholderTextColor"/>
                                     <state key="normal" title="Edit">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -602,7 +601,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMg-1r-6Ia">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
-                                                        <color key="backgroundColor" name="AccentColor"/>
+                                                        <color key="backgroundColor" systemColor="placeholderTextColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="240" id="1rC-6C-YnS"/>
                                                             <constraint firstAttribute="height" constant="60" id="oIt-zG-mL0"/>
@@ -673,9 +672,9 @@
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

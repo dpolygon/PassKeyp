@@ -8,9 +8,6 @@
 import UIKit
 import Firebase
 
-var currMatchSystem = true
-var currDarkMode = false
-
 class SettingsViewController: UITableViewController {
 
     private let segueIdentifier = "logInIdentifier"
@@ -18,6 +15,8 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var faqButton: UIButton!
     @IBOutlet weak var aboutButton: UIButton!
+    let userSettings = ModeSettingDataController.controller
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,43 +25,47 @@ class SettingsViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        matchSystemSwitch.onTintColor = accentColor
-        darkModeSwitch.onTintColor = accentColor
-        faqButton.setTitleColor(accentColor, for: .normal)
-        aboutButton.setTitleColor(accentColor, for: .normal)
+        let uIColor = userSettings.getUserAccentColor()
+        matchSystemSwitch.onTintColor = uIColor
+        darkModeSwitch.onTintColor = uIColor
+        faqButton.setTitleColor(uIColor, for: .normal)
+        aboutButton.setTitleColor(uIColor, for: .normal)
         
         // set switches to current settings
-        matchSystemSwitch.setOn(currMatchSystem, animated: false)
-        darkModeSwitch.setOn(currDarkMode, animated: false)
+        matchSystemSwitch.setOn(userSettings.getMatchSystem(), animated: true)
+        darkModeSwitch.setOn(userSettings.getUserDarkMode(), animated: true)
     }
     
     @IBAction func matchChanged(_ sender: Any) {
         if matchSystemSwitch.isOn {
             // cannot both be on
-            currMatchSystem = true
+            userSettings.setMatchSystem(matchSystem: true)
             darkModeSwitch.setOn(false, animated: true)
             darkModeSwitch.sendActions(for: .valueChanged)// this line will run changeToMode(true, false)
         } else {
             // default to light mode
-            currMatchSystem = false
-            changeToMode(matchBool: currMatchSystem, darkBool: currDarkMode)
+            userSettings.setMatchSystem(matchSystem: false)
+            changeToMode(matchBool: userSettings.getMatchSystem(), darkBool: userSettings.getUserDarkMode())
         }
     }
     
     @IBAction func darkChanged(_ sender: Any) {
         if darkModeSwitch.isOn {
             // cannot have both turned on
-            currDarkMode = true
+            userSettings.setUserDarkMode(darkMode: true)
             matchSystemSwitch.setOn(false, animated: true)
             matchSystemSwitch.sendActions(for: .valueChanged)// this line will run changeToMode(false, true)
         } else {
             // default value of match
-            currDarkMode = false
-            changeToMode(matchBool: currMatchSystem, darkBool: currDarkMode)
+            userSettings.setUserDarkMode(darkMode: false)
+            changeToMode(matchBool: userSettings.getMatchSystem(), darkBool: userSettings.getUserDarkMode())
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // deselecting row animation enabled
+        tableView.deselectRow(at: indexPath, animated: true)
+
         // code for log out selection
         if indexPath.section == 3 {
             let firebaseAuth = Auth.auth()

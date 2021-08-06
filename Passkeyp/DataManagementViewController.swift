@@ -18,10 +18,12 @@ class DataManagementViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        eraseButton.backgroundColor = accentColor
+        let uIColor = ModeSettingDataController.controller.getUserAccentColor()
+        eraseButton.backgroundColor = uIColor
     }
         
     @IBAction func eraseDataPressed(_ sender: Any) {
+        ModeSettingDataController.controller.resetUserSettings()
     }
     
     /*

@@ -20,11 +20,13 @@ class DisplayKeypViewController: UITableViewController {
     var delegate: UIViewController?
     var keypDataObject: NSManagedObject?
     let pasteboard = UIPasteboard.general
+    let userSettings = ModeSettingDataController.controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        editSaveButton.backgroundColor = accentColor
-        hideButton.tintColor = accentColor
+        let uIColor = userSettings.getUserAccentColor()
+        editSaveButton.backgroundColor = uIColor
+        hideButton.tintColor = uIColor
         let keyp = keypDataObject as! Website
         websiteField.text = keyp.websiteName
         usernameField.text = keyp.username

@@ -23,6 +23,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var creationButton: UIButton!
     @IBOutlet weak var userPicture: UIImageView!
+    @IBOutlet weak var userName: UILabel!
     let picker = UIImagePickerController()
     
     var categoryCellIdentifier = "keypCategoryCell"
@@ -156,9 +157,10 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         creationButton.tintColor = ModeSettingDataController.controller.getUserAccentColor()
         websiteCollectionView.reloadData()
+        userName.text = ModeSettingDataController.controller.getUserName()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
