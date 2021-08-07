@@ -27,14 +27,19 @@ class ModeSettingDataController {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
         // use if want to retrieve specific user settings
-//        let predicate = NSPredicate(format: "userUID == %@", testUser)
+//        let predicate = NSPredicate(format: "userUID == %@", "mainUser")
 //        request.predicate = predicate
         
         var fetchedResult: [NSManagedObject]? = nil
         do {
             try fetchedResult = context.fetch(request) as? [NSManagedObject]
-            userSettingsObject = fetchedResult![0]
+            if fetchedResult!.count != 0 {
+                userSettingsObject = fetchedResult![0]
+            } else {
+                userSettingsObject = createUserSettings()
+            }
         } catch {
+            print("failed to retrieve user settings profile, generating default settings")
             userSettingsObject = createUserSettings()
         }
         userSettings = (userSettingsObject as! ModeSettings)
@@ -48,7 +53,7 @@ class ModeSettingDataController {
         userSettings.setValue(true, forKey: "matchSystem")
         userSettings.setValue("defaultName", forKey: "userName")
         userSettings.setValue(nil, forKey: "userPFP")
-        userSettings.setValue("", forKey: "userUID")
+        userSettings.setValue("mainUser", forKey: "userUID")
         appDelegate.saveContext()
         return userSettings
     }
