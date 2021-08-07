@@ -77,11 +77,22 @@
                     </view>
                     <connections>
                         <outlet property="eraseButton" destination="su6-ux-x9i" id="zRz-k5-kka"/>
+                        <segue destination="5nI-S2-v6o" kind="presentation" identifier="logInIdentifier" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="M5M-7f-0tR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121.73913043478262" y="93.75"/>
+            <point key="canvasLocation" x="101" y="94"/>
+        </scene>
+        <!--LogInStoryboard-->
+        <scene sceneID="yme-pi-Wr2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LogInStoryboard" id="5nI-S2-v6o" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ixS-aA-Eis"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i2u-Na-6sB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831" y="94"/>
         </scene>
     </scenes>
     <resources>

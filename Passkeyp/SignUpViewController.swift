@@ -80,6 +80,17 @@ class SignUpViewController: UIViewController {
     @IBAction func backButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: segueIdentifier, sender: nil)
     }
+    
+    // code to enable tapping on the background to remove software keyboard
+        
+        func textFieldShouldReturn(textField:UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
+
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
     /*
     // MARK: - Navigation
 

@@ -6,15 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
 class DataManagementViewController: UIViewController {
 
+    private let segueIdentifier = "logInIdentifier"
     @IBOutlet weak var eraseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +24,14 @@ class DataManagementViewController: UIViewController {
         
     @IBAction func eraseDataPressed(_ sender: Any) {
         ModeSettingDataController.controller.resetUserSettings()
+        WebsiteDataController.controller.deleteAllKeypData()
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            performSegue(withIdentifier: segueIdentifier, sender: nil)
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
     }
     
     /*

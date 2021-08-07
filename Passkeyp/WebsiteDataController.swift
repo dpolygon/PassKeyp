@@ -76,7 +76,7 @@ class WebsiteDataController {
     }
     
     // Remove all websites from Core Data
-    func deleteAllOrders() {
+    func deleteAllKeypData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: request)
         do {

@@ -6,11 +6,9 @@
 //
 
 import UIKit
-import Firebase
 
 class SettingsViewController: UITableViewController {
 
-    private let segueIdentifier = "logInIdentifier"
     @IBOutlet weak var matchSystemSwitch: UISwitch!
     @IBOutlet weak var darkModeSwitch: UISwitch!
     @IBOutlet weak var faqButton: UIButton!
@@ -65,17 +63,6 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // deselecting row animation enabled
         tableView.deselectRow(at: indexPath, animated: true)
-
-        // code for log out selection
-        if indexPath.section == 3 {
-            let firebaseAuth = Auth.auth()
-            do {
-              try firebaseAuth.signOut()
-                performSegue(withIdentifier: segueIdentifier, sender: nil)
-            } catch let signOutError as NSError {
-              print("Error signing out: %@", signOutError)
-            }
-        }
     }
     
     func changeToMode(matchBool: Bool, darkBool: Bool){

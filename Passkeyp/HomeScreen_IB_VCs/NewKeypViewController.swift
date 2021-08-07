@@ -20,7 +20,7 @@ class NewKeypViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newKeypCard.layer.cornerRadius = 14
+        newKeypCard.layer.cornerRadius = 30
         saveButton.layer.cornerRadius = 14
     }
     
@@ -29,6 +29,21 @@ class NewKeypViewController: UIViewController {
     }
     
     @IBAction func savePressed(_ sender: Any) {
+        guard websiteField.text != "" else {
+            websiteField.placeholder = "Please add a website"
+            return
+        }
+        
+        guard usernameField.text != "" else {
+            usernameField.placeholder = "Please add a username"
+            return
+        }
+        
+        guard passwordField.text != "" else {
+            passwordField.placeholder = "Please add a password"
+            return
+        }
+    
         let newKeyp = WebsiteDataController.controller.createWebsite(websiteName: websiteField.text ?? " ", username: usernameField.text ?? " ", password: passwordField.text ?? " ")
         let otherVC = delegate as! HomeScreenViewController
         otherVC.updateCollectionWithNewKeyp(keyp: newKeyp!)
