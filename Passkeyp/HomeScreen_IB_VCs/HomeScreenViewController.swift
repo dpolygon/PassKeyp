@@ -119,6 +119,18 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.categoryCollectionView {
+            let index = indexPath.row
+            if index == 0 {
+                websiteCollection = WebsiteDataController.controller.retrieveWebsites()
+            } else {
+                websiteCollection = WebsiteDataController.controller.searchKeyps(tag: categoryLabels[index])
+            }
+            websiteCollectionView.reloadData()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.categoryCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: categoryCellIdentifier, for: indexPath as IndexPath) as! categoryCollectionViewCell

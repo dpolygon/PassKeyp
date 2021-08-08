@@ -10,11 +10,12 @@
     </entity>
     <entity name="Website" representedClassName="Website" syncable="YES" codeGenerationType="class">
         <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="tag" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
         <attribute name="websiteName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="ModeSettings" positionX="-63" positionY="9" width="128" height="119"/>
-        <element name="Website" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Website" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

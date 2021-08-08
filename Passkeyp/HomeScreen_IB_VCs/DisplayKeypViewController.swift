@@ -17,6 +17,8 @@ class DisplayKeypViewController: UITableViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var hideButton: UIButton!
     @IBOutlet weak var editSaveButton: UIButton!
+    @IBOutlet weak var tagSection: UIView!
+    @IBOutlet weak var tagDetail: UILabel!
     var delegate: UIViewController?
     var keypDataObject: NSManagedObject?
     let pasteboard = UIPasteboard.general
@@ -31,6 +33,7 @@ class DisplayKeypViewController: UITableViewController {
         websiteField.text = keyp.websiteName
         usernameField.text = keyp.username
         passwordField.text = keyp.password
+        tagDetail.text = keyp.tag
         editSaveButton.layer.cornerRadius = 16
         deleteButton.layer.cornerRadius = 16
         
@@ -42,19 +45,31 @@ class DisplayKeypViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        switch indexPath.row {
-        case 0:
-            let url = URL(string: "https://www.google.com/search?q=\(String(describing: websiteField.text!))")
-            UIApplication.shared.open(url!)
-            break
-        case 1:
-            pasteboard.string = usernameField.text
-            break
-        case 2:
-            pasteboard.string = passwordField.text
-            break
-        default:
-            break
+        if indexPath.section == 0 {
+            let controller = UIAlertController(title: "Select A Tag", message: "Choose a tag that will help you remember this Keyp:", preferredStyle: .alert)
+            for category in categoryLabels {
+                controller.addAction(UIAlertAction(title: category,
+                                                   style: .default,
+                                                   // action that is called will update crust option
+                                                   handler: { [self] _ in tagDetail.text = category}))
+            }
+            present(controller, animated: true, completion: nil)
+        }
+        if indexPath.section == 1 {
+            switch indexPath.row {
+            case 0:
+                let url = URL(string: "https://www.google.com/search?q=\(String(describing: websiteField.text!))")
+                UIApplication.shared.open(url!)
+                break
+            case 1:
+                pasteboard.string = usernameField.text
+                break
+            case 2:
+                pasteboard.string = passwordField.text
+                break
+            default:
+                break
+            }
         }
     }
     
@@ -68,8 +83,9 @@ class DisplayKeypViewController: UITableViewController {
             editSaveButton.setTitle("Edit", for: .normal)
             passwordField.isSecureTextEntry = true
             hideButton.isUserInteractionEnabled = true
-            WebsiteDataController.controller.updateKeyp(website: keypDataObject, websiteName: websiteField.text!, username: usernameField.text!, password: passwordField.text!)
+            WebsiteDataController.controller.updateKeyp(website: keypDataObject, websiteName: websiteField.text!, username: usernameField.text!, password: passwordField.text!, tag: tagDetail.text!)
         }
+        tagSection.isUserInteractionEnabled = editable
         websiteField.isUserInteractionEnabled = editable
         usernameField.isUserInteractionEnabled = editable
         passwordField.isUserInteractionEnabled = editable
@@ -91,8 +107,8 @@ class DisplayKeypViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         if self.traitCollection.userInterfaceStyle == .dark {
             keypTableView.backgroundColor = UIColor.black
-                } else {
-                    keypTableView.backgroundColor = UIColor.white
-                }
+        } else {
+            keypTableView.backgroundColor = UIColor.white
+        }
     }
 }

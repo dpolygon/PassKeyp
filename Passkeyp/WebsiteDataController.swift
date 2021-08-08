@@ -24,21 +24,23 @@ class WebsiteDataController {
     }
     
     // Stores website data to core Data
-    func createWebsite(websiteName: String, username: String, password: String) -> NSManagedObject? {
+    func createWebsite(websiteName: String, username: String, password: String, tag: String) -> NSManagedObject? {
         let website = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
         website.setValue(websiteName, forKey: "websiteName")
         website.setValue(username, forKey: "username")
         website.setValue(password, forKey: "password")
+        website.setValue(tag, forKey: "tag")
         appDelegate.saveContext()
         return website
     }
     
     // Updates the same current Website data that is being created to new user specifications in Core Data
-    func updateKeyp(website: NSManagedObject?, websiteName: String, username: String, password: String) {
+    func updateKeyp(website: NSManagedObject?, websiteName: String, username: String, password: String, tag: String) {
         if let website = website {
             website.setValue(websiteName, forKey: "websiteName")
             website.setValue(username, forKey: "username")
             website.setValue(password, forKey: "password")
+            website.setValue(tag, forKey: "tag")
             appDelegate.saveContext()
         }
         appDelegate.saveContext()
@@ -56,9 +58,24 @@ class WebsiteDataController {
         return fetchedResults
     }
     
+    // search for Keyp using website name
     func searchKeyps(contains: String) -> [NSManagedObject]? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let pred = NSPredicate(format: "websiteName CONTAINS[c] '\(contains)'")
+        request.predicate = pred
+        var fetchedResults: [NSManagedObject]? = nil
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            runErrorMessage(error: error, message: "an error has occurred when attempting to retrieve websites")
+        }
+        return fetchedResults
+    }
+    
+    // search for Keyp using keyp tag
+    func searchKeyps(tag: String) -> [NSManagedObject]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let pred = NSPredicate(format: "tag CONTAINS[c] '\(tag)'")
         request.predicate = pred
         var fetchedResults: [NSManagedObject]? = nil
         do {
