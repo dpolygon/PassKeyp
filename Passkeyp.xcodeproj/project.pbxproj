@@ -151,13 +151,12 @@
 				4DD8EFD826A759FA00E0C4AF /* StoryBoards */,
 				4DD8EFC126A74E9C00E0C4AF /* AppDelegate.swift */,
 				4DD8EFC326A74E9C00E0C4AF /* SceneDelegate.swift */,
+				4DF7A90826BFCDBE00C729C3 /* LoginSignup_IB_VCs */,
 				4DD8F00326A778A200E0C4AF /* HomeScreen_IB_VCs */,
 				4DD8F00426A7790100E0C4AF /* Security_IB_VCs */,
 				4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */,
 				4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */,
-				944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */,
 				4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */,
-				9489313726B08F2F00141394 /* LogInViewController.swift */,
 				4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */,
 				4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */,
 				4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */,
@@ -209,6 +208,15 @@
 				4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */,
 			);
 			path = Security_IB_VCs;
+			sourceTree = "<group>";
+		};
+		4DF7A90826BFCDBE00C729C3 /* LoginSignup_IB_VCs */ = {
+			isa = PBXGroup;
+			children = (
+				944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */,
+				9489313726B08F2F00141394 /* LogInViewController.swift */,
+			);
+			path = LoginSignup_IB_VCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

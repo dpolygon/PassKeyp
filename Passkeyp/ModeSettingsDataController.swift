@@ -99,8 +99,7 @@ class ModeSettingDataController {
     }
     
     func setUserName(name: String) {
-        print("name was set")
-        userSettingsObject.setValue(name, forKey: "userName")
+        userSettings.setValue(name, forKey: "userName")
         appDelegate.saveContext()
     }
     
@@ -111,12 +110,18 @@ class ModeSettingDataController {
         return userSettings.userName!
     }
     
-    func setUserPFP() {
-        
+    func setUserPFP(userPic: UIImage) {
+        let dataPic = userPic.pngData()! as NSData
+        userSettings.setValue(dataPic, forKey: "userPFP")
+        appDelegate.saveContext()
     }
     
-    func getUserPFP() {
-        
+    func getUserPFP() -> UIImage {
+        let image = UIImage(data: userSettings.userPFP!)
+        guard image != nil else {
+            return UIImage(named: "UserPFP")!
+        }
+        return image!
     }
     
     func setUserUID() {

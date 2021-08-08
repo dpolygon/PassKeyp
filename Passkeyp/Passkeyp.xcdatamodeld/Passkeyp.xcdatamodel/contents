@@ -5,7 +5,7 @@
         <attribute name="darkMode" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="matchSystem" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
-        <attribute name="userPFP" optional="YES" attributeType="Binary"/>
+        <attribute name="userPFP" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="userUID" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Website" representedClassName="Website" syncable="YES" codeGenerationType="class">

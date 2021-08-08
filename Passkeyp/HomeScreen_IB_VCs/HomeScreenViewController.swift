@@ -8,8 +8,8 @@
 import UIKit
 import CoreData
 
-var icons = ["vaultIcon", "websiteIcon", "entertainmentIcon", "workIcon", "schoolIcon", "boxIcon"]
-var categoryLabels = ["All", "Website", "Entertainment", "Work", "School", "Other"]
+var icons = ["collectionIcon", "webIcon", "appsIcon", "entertainmentIcon", "walletIcon", "workIcon", "otherIcon"]
+var categoryLabels = ["Collection", "Websites", "Apps", "Entertainment", "Wallet", "Work", "Other"]
 
 protocol updateDataRemotely {
     func updateCollectionWithNewKeyp(keyp: NSManagedObject)
@@ -17,13 +17,15 @@ protocol updateDataRemotely {
 }
 
 class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, updateDataRemotely {
-
+    
+    @IBOutlet weak var helloLabel1: UILabel!
+    @IBOutlet weak var helloLabel2: UILabel!
     @IBOutlet weak var searchKeypBar: UISearchBar!
     @IBOutlet weak var websiteCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var creationButton: UIButton!
     @IBOutlet weak var userPicture: UIImageView!
-    @IBOutlet weak var userName: UILabel!
+    
     let picker = UIImagePickerController()
     
     var categoryCellIdentifier = "keypCategoryCell"
@@ -33,14 +35,40 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpDelegatesAndDataSources()
+        userPicture.layer.cornerRadius = 20
+        userPicture.image = ModeSettingDataController.controller.getUserPFP()
+        setUpHelloUser()
+        setUpGestures()
+    }
+    
+    func setUpDelegatesAndDataSources() {
         categoryCollectionView.delegate = self
         websiteCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         websiteCollectionView.dataSource = self
         searchKeypBar.delegate = self
         picker.delegate = self
-        userPicture.layer.cornerRadius = 20
-        setUpGestures()
+    }
+    
+    func setUpHelloUser() {
+        let name = ModeSettingDataController.controller.getUserName()
+        helloLabel1.text = "Hello \(name) 👋"
+        let hour = Calendar.current.component(.hour, from: Date())
+        var greeting = ""
+        switch hour {
+        case 0...3:
+            greeting = "Good Evening"
+        case 4...11:
+            greeting = "Good Morning"
+        case 12...17:
+            greeting = "Good Afternoon"
+        case 18...24:
+            greeting = "Good Evening"
+        default:
+            greeting = "Error"
+        }
+        helloLabel2.text = greeting
     }
     
     @IBAction func userPFPTapped(_ sender: Any) {
@@ -48,11 +76,11 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         picker.sourceType = .photoLibrary
         present(picker, animated: true, completion: nil)
     }
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let chosenImage = info[.editedImage] as! UIImage
-        
         userPicture.image = chosenImage
+        ModeSettingDataController.controller.setUserPFP(userPic: chosenImage)
         dismiss(animated: true, completion: nil)
     }
     
@@ -68,14 +96,19 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        websiteCollection = WebsiteDataController.controller.searchKeyps(contains: searchText)
+        if searchText == "" {
+            websiteCollection = WebsiteDataController.controller.retrieveWebsites()
+        } else {
+            websiteCollection = WebsiteDataController.controller.searchKeyps(contains: searchText)
+        }
         websiteCollectionView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         websiteCollection = WebsiteDataController.controller.retrieveWebsites()
         websiteCollectionView.reloadData()
-
+        searchKeypBar.text = ""
+        searchKeypBar.resignFirstResponder()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -160,7 +193,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         creationButton.tintColor = ModeSettingDataController.controller.getUserAccentColor()
         websiteCollectionView.reloadData()
-        userName.text = ModeSettingDataController.controller.getUserName()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -187,6 +219,10 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     func deleteKeypAndUpdate() {
         let index = websiteCollectionView.indexPathsForSelectedItems?.last?.row
         websiteCollection?.remove(at: index!)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
