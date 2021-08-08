@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Security Recommendations-->
+        <!--Keyp Secure-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="SecurityViewController" customModule="Passkeyp" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="cmq-73-QKu"/>
-                    <navigationItem key="navigationItem" title="Security Recommendations" id="kP4-Ju-bEs"/>
+                    <navigationItem key="navigationItem" title="Keyp Secure" id="kP4-Ju-bEs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Wge-c5-VW6" id="Joj-5C-5l3"/>
