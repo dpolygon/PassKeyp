@@ -117,11 +117,12 @@ class ModeSettingDataController {
     }
     
     func getUserPFP() -> UIImage {
-        let image = UIImage(data: userSettings.userPFP!)
-        guard image != nil else {
-            return UIImage(named: "UserPFP")!
+        if (userSettings.userPFP != nil) {
+            let image = UIImage(data: userSettings.userPFP!)
+            return image!
         }
-        return image!
+        // In the case that no profile pic was set, return default
+        return UIImage(named: "UserPFP")!
     }
     
     func setUserUID() {

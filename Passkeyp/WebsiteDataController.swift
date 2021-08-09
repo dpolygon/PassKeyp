@@ -26,10 +26,10 @@ class WebsiteDataController {
     // Stores website data to core Data
     func createWebsite(websiteName: String, username: String, password: String, tag: String) -> NSManagedObject? {
         let website = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
+        website.setValue(tag, forKey: "tag")
         website.setValue(websiteName, forKey: "websiteName")
         website.setValue(username, forKey: "username")
         website.setValue(password, forKey: "password")
-        website.setValue(tag, forKey: "tag")
         appDelegate.saveContext()
         return website
     }
