@@ -121,7 +121,7 @@ class ModeSettingDataController {
             return UIImage(named: "UserPFP")!
         }
         let image = UIImage(data: userSettings.userPFP!)
-        return image!
+        return image! 
     }
     
     func setUserUID() {
