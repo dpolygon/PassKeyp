@@ -10,8 +10,6 @@ import LocalAuthentication
 import Firebase
 import CoreData
 
-var context = LAContext()
-
 enum AuthenticationState {
     case loggedin, loggedout
 }
@@ -47,9 +45,6 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // check for ability to use face ID
-        context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-        
         Auth.auth().addStateDidChangeListener() {
           auth, user in
           
@@ -74,51 +69,39 @@ class LogInViewController: UIViewController {
             
             return
         }
-        
-        Auth.auth().signIn(withEmail: email, password: password) { user, error in
-            if let error = error, user == nil {
-                self.statusLabel.text = "Authentication unsuccessful."
-                self.statusLabel.isHidden = false
+        do {
+            // update or create credentials
+            let credentials = try KeychainController.keychainController.readKeychainCredentials(view: self, setUser: email, setPassword: password, segue: segueIdentifier)
+            // sign in
+            Auth.auth().signIn(withEmail: credentials.account, password: credentials.password) { user, error in
+                if let error = error, user == nil {
+                    self.statusLabel.text = "Authentication unsuccessful."
+                    self.statusLabel.isHidden = false
+                }
+            }
+        } catch {
+            if let error = error as? KeychainError {
+                print(error.localizedDescription)
             }
         }
     }
     
     @IBAction func faceIDPressed(_ sender: Any) {
-        // create new context
-        context = LAContext()
-        
-        
-        // check for hardware support
-        var error: NSError?
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-
-            let reason = "Log in to your account"
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
-
-                if success {
-
-                    // Move to the main thread because a state update triggers UI changes.
-                    DispatchQueue.main.async { [unowned self] in
-                        self.state = .loggedin
-                    }
-
-                } else {
-                    print(error?.localizedDescription ?? "Failed to authenticate")
-
-                    // Fall back to a asking for username and password.
-                    DispatchQueue.main.async {
-                        self.statusLabel.text = "Authentication unsuccessful."
-                        self.statusLabel.isHidden = false
-                    }
+        do {
+            // read credentials
+            let credentials = try KeychainController.keychainController.readKeychainCredentials(view: nil, setUser: nil, setPassword: nil, segue: nil)
+            print("face id: \(credentials.account)")
+            print("face id: \(credentials.password)")
+            // sign in
+            Auth.auth().signIn(withEmail: credentials.account, password: credentials.password) { user, error in
+                if let error = error, user == nil {
+                    self.statusLabel.text = "Authentication unsuccessful."
+                    self.statusLabel.isHidden = false
                 }
             }
-        } else {
-            print(error?.localizedDescription ?? "Can't evaluate policy")
-
-            // Fall back to a asking for username and password.
-            DispatchQueue.main.async {
-                self.statusLabel.text = "No biometry available on device."
-                self.statusLabel.isHidden = false
+        } catch {
+            if let error = error as? KeychainError {
+                print(error.localizedDescription)
             }
         }
     }
@@ -135,6 +118,7 @@ class LogInViewController: UIViewController {
         view.window?.overrideUserInterfaceStyle = style
         overrideUserInterfaceStyle = style
     }
+    
     
     /*
     // MARK: - Navigation

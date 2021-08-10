@@ -25,7 +25,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         // check for fields filled
-        guard let user = userField.text, let password = passwordField.text, let passwordRepeat = repeatPasswordField.text, user.count > 0, password.count > 0, passwordRepeat.count > 0 else {
+        guard let user = userField.text, let pwd = passwordField.text, let passwordRepeat = repeatPasswordField.text, user.count > 0, pwd.count > 0, passwordRepeat.count > 0 else {
             statusLabel.text = "Missing field(s)."
             statusLabel.isHidden = false
             return
@@ -46,14 +46,14 @@ class SignUpViewController: UIViewController {
         }
         
         // check for field length
-        guard password.count >= 8 else {
+        guard pwd.count >= 8 else {
             statusLabel.text = "Password has to contain at least 8 characters."
             statusLabel.isHidden = false
             return
         }
         
         // check for password match
-        guard password == passwordRepeat else {
+        guard pwd == passwordRepeat else {
             statusLabel.text = "Passwords don't match."
             statusLabel.isHidden = false
             return
@@ -63,11 +63,15 @@ class SignUpViewController: UIViewController {
         ModeSettingDataController.controller.setUserName(name: nameField.text!)
         
         // create user
-        Auth.auth().createUser(withEmail: user, password: password) { [self] authResult, error in
+        Auth.auth().createUser(withEmail: user, password: pwd) { [self] authResult, error in
             if error == nil {
-                Auth.auth().signIn(withEmail: user, password: password) { [self]
-                    user, error in if error == nil {
-                        performSegue(withIdentifier: segueIdentifier, sender: nil)
+                // ask to add credentials to keychain and sign in
+                do {
+                    print("THIS IS MY PASSWORD \(pwd)")
+                    try KeychainController.keychainController.readKeychainCredentials(view: self, setUser: user, setPassword: pwd, segue: segueIdentifier)
+                } catch {
+                    if let error = error as? KeychainError {
+                        print(error.localizedDescription)
                     }
                 }
             } else {
@@ -91,6 +95,7 @@ class SignUpViewController: UIViewController {
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
         }
+    
     /*
     // MARK: - Navigation
 
