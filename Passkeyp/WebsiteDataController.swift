@@ -17,6 +17,7 @@ class WebsiteDataController {
     var entityName = "Website"
     var appDelegate: AppDelegate
     var context: NSManagedObjectContext
+    static var repeatedPasswords : [NSManagedObject] = []
     
     init() {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -84,6 +85,57 @@ class WebsiteDataController {
             runErrorMessage(error: error, message: "an error has occurred when attempting to retrieve websites")
         }
         return fetchedResults
+    }
+    
+    // search for Keyp using keyp tag
+    func searchPassword(password: String) -> [NSManagedObject]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let pred = NSPredicate(format: "password CONTAINS[c] '\(password)'")
+        request.predicate = pred
+        var fetchedResults: [NSManagedObject]? = nil
+        do {
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        } catch {
+            runErrorMessage(error: error, message: "an error has occurred when attempting to retrieve websites")
+        }
+        return fetchedResults
+    }
+    
+    // get Websites with repeated passwords
+    func searchRepeated() -> [NSManagedObject] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        
+        let passwordExpr = NSExpression(forKeyPath: "password")
+        
+        let countExpr = NSExpressionDescription()
+        let countVariableExpr = NSExpression(forVariable: "count")
+
+        countExpr.name = "count"
+        countExpr.expression = NSExpression(forFunction: "count:", arguments: [ passwordExpr ])
+        countExpr.expressionResultType = .integer64AttributeType
+
+        request.resultType = .dictionaryResultType
+        request.sortDescriptors = [ NSSortDescriptor(key: "password", ascending: false) ]
+        request.propertiesToGroupBy = [ Website.entity().propertiesByName["password"]! ]
+        request.propertiesToFetch = [ Website.entity().propertiesByName["password"]!, countExpr]
+
+        request.havingPredicate = NSPredicate(format: "%@ > 1", countVariableExpr)
+       
+        var websites : [NSManagedObject] = []
+        var results : NSArray?
+        do {
+            results = try context.fetch(request) as NSArray
+        } catch {
+            runErrorMessage(error: error, message: "an error has occurred when attempting to retrieve websites")
+        }
+        
+        for dict in results! {
+            let website = dict as! NSDictionary
+            let password = website.value(forKey: "password")
+            let moreKeyps = searchPassword(password: password as! String)
+            websites.append(contentsOf: moreKeyps!)
+        }
+        return websites
     }
     
     // Deletes a specified 'website' from Core Data

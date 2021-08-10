@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
-class EditWeakWebsiteViewController: UIViewController {
-
-    @IBOutlet weak var deleteButton: UIButton!
-    @IBOutlet weak var separatorLine1: UIView!
-    @IBOutlet weak var separatorLine2: UIView!
-    @IBOutlet weak var saveButton: UIButton!
+class EditWeakWebsiteViewController: UITableViewController {
     
+    var keypDataObject: NSManagedObject?
+    let keypController = WebsiteDataController.controller
+    @IBOutlet weak var saveButton: UIButton!
     let uIColor = ModeSettingDataController.controller.getUserAccentColor()
+    
+    @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,26 +24,32 @@ class EditWeakWebsiteViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        deleteButton.backgroundColor = uIColor
-        separatorLine2.backgroundColor = uIColor
-        separatorLine1.backgroundColor = uIColor
         saveButton.backgroundColor = uIColor
     }
-    
+
     @IBAction func savePressed(_ sender: Any) {
+        passwordField.isEnabled = false
+        //let websiteName = keypObject.
+        //keypController.updateKeyp(website: keypObject, websiteName: keypObject, username: <#T##String#>, password: <#T##String#>, tag: <#T##String#>)
     }
     
-    @IBAction func generatePasswordPressed(_ sender: Any) {
+    @IBAction func deletePressed(_ sender: Any) {
     }
     
-    @IBAction func deletePasswordPressed(_ sender: Any) {
+    @IBAction func viewPasswordPressed(_ sender: Any) {
+        passwordField.isSecureTextEntry = !passwordField.isSecureTextEntry
     }
     
-    @IBAction func editPressed(_ sender: Any) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section == 1) {
+            if (indexPath.row == 0) {
+                passwordField.isEnabled = true
+            } else if (indexPath.row == 1) {
+                
+            }
+        }
     }
     
-    @IBAction func showPasswordPressed(_ sender: Any) {
-    }
     /*
     // MARK: - Navigation
 
