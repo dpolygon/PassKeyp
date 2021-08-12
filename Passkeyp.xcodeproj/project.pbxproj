@@ -26,7 +26,6 @@
 		4DD8EFEB26A771E400E0C4AF /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFEA26A771E400E0C4AF /* SecurityViewController.swift */; };
 		4DD8EFED26A771FC00E0C4AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */; };
 		4DD8EFEF26A7721100E0C4AF /* GitRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */; };
-		4DD8EFF126A7721B00E0C4AF /* PGPKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */; };
 		4DD8EFF326A7722E00E0C4AF /* RandomPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */; };
 		4DD8EFF526A7724000E0C4AF /* AccentColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */; };
 		4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */; };
@@ -36,6 +35,8 @@
 		4DD8F00226A7780C00E0C4AF /* EditWeakWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */; };
 		4DF3224526A9F696001B8121 /* DPImageView+LettersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */; };
 		4DF3224726A9F921001B8121 /* WebsiteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224626A9F921001B8121 /* WebsiteDataController.swift */; };
+		7375BA9926C5E7100041FB40 /* ImportPGPKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375BA9826C5E7100041FB40 /* ImportPGPKeyViewController.swift */; };
+		73799F4126C5E403002C3D7E /* PGPKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73799F4026C5E403002C3D7E /* PGPKeyViewController.swift */; };
 		885FAAC828A85AE749BF5F65 /* Pods_Passkeyp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9C90CDA2100F1EE554538F /* Pods_Passkeyp.framework */; };
 		944B2F6D26B0A403005EDE37 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */; };
 		9489313626B08EF800141394 /* LogInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489313526B08EF800141394 /* LogInStoryboard.storyboard */; };
@@ -80,7 +81,6 @@
 		4DD8EFEA26A771E400E0C4AF /* SecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
 		4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryViewController.swift; sourceTree = "<group>"; };
-		4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGPKeyViewController.swift; sourceTree = "<group>"; };
 		4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPasswordViewController.swift; sourceTree = "<group>"; };
 		4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorPickerViewController.swift; sourceTree = "<group>"; };
 		4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPreferencesViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWeakWebsiteViewController.swift; sourceTree = "<group>"; };
 		4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPImageView+LettersExtension.swift"; sourceTree = "<group>"; };
 		4DF3224626A9F921001B8121 /* WebsiteDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteDataController.swift; sourceTree = "<group>"; };
+		7375BA9826C5E7100041FB40 /* ImportPGPKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImportPGPKeyViewController.swift; path = "Passkeyp/PGP_Key_VCs_&_Data/ImportPGPKeyViewController.swift"; sourceTree = SOURCE_ROOT; };
+		73799F4026C5E403002C3D7E /* PGPKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGPKeyViewController.swift; sourceTree = "<group>"; };
 		944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9489313526B08EF800141394 /* LogInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInStoryboard.storyboard; sourceTree = "<group>"; };
 		9489313726B08F2F00141394 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -154,9 +156,9 @@
 				4DF7A90826BFCDBE00C729C3 /* LoginSignup_IB_VCs */,
 				4DD8F00326A778A200E0C4AF /* HomeScreen_IB_VCs */,
 				4DD8F00426A7790100E0C4AF /* Security_IB_VCs */,
+				73799F4226C5E4D7002C3D7E /* PGP_Key_VCs_&_Data */,
 				4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */,
 				4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */,
-				4DD8EFF026A7721B00E0C4AF /* PGPKeyViewController.swift */,
 				4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */,
 				4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */,
 				4DD8EFF626A7724D00E0C4AF /* SignInPreferencesViewController.swift */,
@@ -217,6 +219,15 @@
 				9489313726B08F2F00141394 /* LogInViewController.swift */,
 			);
 			path = LoginSignup_IB_VCs;
+			sourceTree = "<group>";
+		};
+		73799F4226C5E4D7002C3D7E /* PGP_Key_VCs_&_Data */ = {
+			isa = PBXGroup;
+			children = (
+				7375BA9826C5E7100041FB40 /* ImportPGPKeyViewController.swift */,
+				73799F4026C5E403002C3D7E /* PGPKeyViewController.swift */,
+			);
+			path = "PGP_Key_VCs_&_Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73799F4126C5E403002C3D7E /* PGPKeyViewController.swift in Sources */,
 				4DD8EFFE26A7777100E0C4AF /* DisplayKeypViewController.swift in Sources */,
 				4DD8EFC626A74E9C00E0C4AF /* HomeScreenViewController.swift in Sources */,
 				9489313826B08F2F00141394 /* LogInViewController.swift in Sources */,
@@ -355,8 +367,8 @@
 				944B2F6D26B0A403005EDE37 /* SignUpViewController.swift in Sources */,
 				4DD8EFF326A7722E00E0C4AF /* RandomPasswordViewController.swift in Sources */,
 				4DD8EFC226A74E9C00E0C4AF /* AppDelegate.swift in Sources */,
+				7375BA9926C5E7100041FB40 /* ImportPGPKeyViewController.swift in Sources */,
 				4DD8EFF726A7724D00E0C4AF /* SignInPreferencesViewController.swift in Sources */,
-				4DD8EFF126A7721B00E0C4AF /* PGPKeyViewController.swift in Sources */,
 				4DD8EFF926A7725700E0C4AF /* DataManagementViewController.swift in Sources */,
 				4DD8EFF526A7724000E0C4AF /* AccentColorPickerViewController.swift in Sources */,
 				4DD8F00226A7780C00E0C4AF /* EditWeakWebsiteViewController.swift in Sources */,
