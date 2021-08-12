@@ -39,38 +39,28 @@ class PGPKeyViewController: UITableViewController {
     
     //Function to Generate a new PGP KeyPair with a passphrase entered by the user.
     func generatePGPKeyPair(){
+        //creates a keyring where ObjectivePGP stores PGP keys by default
         let kr = ObjectivePGP.defaultKeyring
-//        print(kr.keys.count)
         
-//        let phrase = "passphrase"
+        //Pop up alert for user to enter passphrase
         
+        //Create generator object **Ask Daniel or Silvana where to get the users email
         let keyGen = KeyGenerator().generate(for: "marcin@example.com", passphrase: "password")
         do {
-            let pubKey = try keyGen.export(keyType: .public)
-            let secKey = try keyGen.export(keyType: .secret)
-                        
-//            print(pubKey)
-//            print(type(of: pubKey))
+            //generate keys and add to keyring
+            let pubKey = try ObjectivePGP.readKeys(from: (try keyGen.export(keyType: .public)))
+            let secKey = try ObjectivePGP.readKeys(from: (try keyGen.export(keyType: .secret)))
             
-            let testPubKey = try ObjectivePGP.readKeys(from: pubKey)
-            let testSecKey = try ObjectivePGP.readKeys(from: secKey)
-//            print(testPubKey)
-//            print(testSecKey)
-            
-            kr.import(keys: testPubKey)
-            kr.import(keys: testSecKey)
+            kr.import(keys: pubKey)
+            kr.import(keys: secKey)
         } catch {
             print("invalid key generation")
         }
-                
         
-//        print(kr.keys.count)
+        //quick test encrypt and decrypt of the string "test"
         let key = kr.keys
-//        print(key)
-//        print(type(of: key))
-        
+
         let toEncrypt:Data = Data("test".utf8)
-        
         do {
             let encrypted = try ObjectivePGP.encrypt(toEncrypt, addSignature: true, using: key, passphraseForKey: {_ in return "password"})
             print(encrypted)
