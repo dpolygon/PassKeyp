@@ -7,12 +7,29 @@
 
 import UIKit
 
-class PGPKeyViewController: UIViewController {
+class PGPKeyViewController: UITableViewController {
 
+    @IBOutlet weak var keyStatusLabel: UILabel!
+    @IBOutlet weak var generateKeyImage: UIImageView!
+    @IBOutlet weak var filesKeyImage: UIImageView!
+    @IBOutlet weak var removeButton: UIButton!
+    let userSettings = ModeSettingDataController.controller
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let uIColor = userSettings.getUserAccentColor()
+        generateKeyImage.tintColor = uIColor
+        filesKeyImage.tintColor = uIColor
+        removeButton.tintColor = uIColor
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // deselecting row animation enabled
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 
