@@ -15,7 +15,6 @@ class PGPKeyViewController: UITableViewController {
     @IBOutlet weak var filesKeyImage: UIImageView!
     @IBOutlet weak var removeButton: UIButton!
     let userSettings = ModeSettingDataController.controller
-    let kr = Keyring()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,32 +82,10 @@ class PGPKeyViewController: UITableViewController {
             let secKey = try ObjectivePGP.readKeys(from: (try keyGen.export(keyType: .secret)))
             kr.import(keys: pubKey)
             kr.import(keys: secKey)
-            
-//            testEncrypt(passphrase: passphrase)
-
         } catch {
             print("invalid key generation")
         }
     }
-    
-    func testEncrypt(passphrase: String) {
-        //quick test encrypt and decrypt of the string "test"
-        let key = ObjectivePGP.defaultKeyring.keys
-
-        let toEncrypt:Data = Data("test".utf8)
-        do {
-            let encrypted = try ObjectivePGP.encrypt(toEncrypt, addSignature: true, using: key, passphraseForKey: {_ in return passphrase})
-            do {
-                let decrypted = try ObjectivePGP.decrypt(encrypted, andVerifySignature: true, using: key, passphraseForKey: {_ in return passphrase})
-                print("decrypted: \(String(decoding: decrypted, as: UTF8.self))")
-            } catch {
-                print("failed decrypt")
-            }
-        } catch {
-            print("failed encrypt")
-        }
-    }
-    
     
     @IBAction func RemoveKeysButton(_ sender: Any) {
     }
