@@ -9,7 +9,6 @@ import UIKit
 
 class RandomPasswordViewController: UITableViewController {
 
-    private let charsAvailable = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "1234567890", "!@#$%^&*()_+[]{}|=-~"]
     private var charsEnabled : [String] = []
     @IBOutlet weak var passwordText: UILabel!
     
@@ -24,14 +23,7 @@ class RandomPasswordViewController: UITableViewController {
     }
 
     @IBAction func generatePressed(_ sender: Any) {
-        guard charsEnabled.count > 0 else {
-            return
-        }
-        let passwordLenght = 20
-        let password = String((0..<passwordLenght).map{_ in
-            let index = Int.random(in: 0..<charsEnabled.count)
-            return charsEnabled[index].randomElement()!
-        })
+        let password = PasswordGenerator.generate(charsAvailable: charsEnabled)
         passwordText.text = password
     }
     
@@ -48,11 +40,11 @@ class RandomPasswordViewController: UITableViewController {
                 // check for accessory
                 if cell.accessoryType == .checkmark {
                     cell.accessoryType = .none
-                    let index = charsEnabled.firstIndex(of: charsAvailable[indexPath.row])!
+                    let index = charsEnabled.firstIndex(of: PasswordGenerator.allChars[indexPath.row])!
                     charsEnabled.remove(at: index)
                 } else {
                     cell.accessoryType = .checkmark
-                    charsEnabled.append(charsAvailable[indexPath.row])
+                    charsEnabled.append(PasswordGenerator.allChars[indexPath.row])
                 }
             }
         }
@@ -68,4 +60,26 @@ class RandomPasswordViewController: UITableViewController {
     }
     */
 
+}
+
+class PasswordGenerator {
+    static let allChars = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "1234567890", "!@#$%^&*()_+[]{}|=-~"]
+    static func generate(charsAvailable: [String]?) -> String {
+        var selectSet : [String]!
+        if let charsEnabled = charsAvailable {
+            if charsEnabled.count == 0 {
+                // none available
+                return ""
+            }
+            selectSet = charsEnabled
+        } else {
+            selectSet = allChars
+        }
+        let passwordLenght = 20
+        let password = String((0..<passwordLenght).map{_ in
+            let index = Int.random(in: 0..<selectSet.count)
+            return selectSet[index].randomElement()!
+        })
+        return password
+    }
 }

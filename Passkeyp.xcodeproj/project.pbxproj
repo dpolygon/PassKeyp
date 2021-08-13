@@ -37,6 +37,7 @@
 		4DF3224526A9F696001B8121 /* DPImageView+LettersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */; };
 		4DF3224726A9F921001B8121 /* WebsiteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224626A9F921001B8121 /* WebsiteDataController.swift */; };
 		885FAAC828A85AE749BF5F65 /* Pods_Passkeyp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9C90CDA2100F1EE554538F /* Pods_Passkeyp.framework */; };
+		94298C2726C1CC2A0050B559 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94298C2626C1CC2A0050B559 /* KeychainController.swift */; };
 		944B2F6D26B0A403005EDE37 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */; };
 		9489313626B08EF800141394 /* LogInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489313526B08EF800141394 /* LogInStoryboard.storyboard */; };
 		9489313826B08F2F00141394 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489313726B08F2F00141394 /* LogInViewController.swift */; };
@@ -90,6 +91,7 @@
 		4DD8F00126A7780C00E0C4AF /* EditWeakWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWeakWebsiteViewController.swift; sourceTree = "<group>"; };
 		4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPImageView+LettersExtension.swift"; sourceTree = "<group>"; };
 		4DF3224626A9F921001B8121 /* WebsiteDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteDataController.swift; sourceTree = "<group>"; };
+		94298C2626C1CC2A0050B559 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
 		944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9489313526B08EF800141394 /* LogInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInStoryboard.storyboard; sourceTree = "<group>"; };
 		9489313726B08F2F00141394 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */,
 				9489313726B08F2F00141394 /* LogInViewController.swift */,
+				94298C2626C1CC2A0050B559 /* KeychainController.swift */,
 			);
 			path = LoginSignup_IB_VCs;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				4DD8EFEB26A771E400E0C4AF /* SecurityViewController.swift in Sources */,
 				4DF3224726A9F921001B8121 /* WebsiteDataController.swift in Sources */,
 				4DD8EFC426A74E9C00E0C4AF /* SceneDelegate.swift in Sources */,
+				94298C2726C1CC2A0050B559 /* KeychainController.swift in Sources */,
 				4D771E2E26BDB3C40002EFB9 /* ModeSettingsDataController.swift in Sources */,
 				4DD8EFED26A771FC00E0C4AF /* SettingsViewController.swift in Sources */,
 			);
@@ -514,9 +518,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TMNQB85S4M;
+				DEVELOPMENT_TEAM = Y5X54T6NKN;
 				INFOPLIST_FILE = Passkeyp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = y2kasfc.passkeyp;
+				PRODUCT_BUNDLE_IDENTIFIER = ezueck.passkeyp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Passkeyp/Passkeyp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

@@ -33,8 +33,9 @@ class SecurityViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         keyps = controller.searchRepeated() as! [Website]
+        tableView.reloadData()
         repeatedCountLabel.text = String(keyps.count)
-        passwordStrengthLabel.text = determineStrength()
+        passwordStrengthLabel.text = determineStrength() ?? "undefined"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,23 +53,22 @@ class SecurityViewController: UIViewController, UITableViewDelegate, UITableView
     func calculateEntropy(passwords: [Website]) -> Double{
         var totalEntropy = 0.0
         let validChars = 94 // alphanumeric, upercase and symbols
-        let passwordCount = passwords.count
         
-        for password in passwords as! [Website] {
+        for password in passwords {
             let passwordEntropy = log2(pow(Double(validChars), Double(password.password!.count)))
             totalEntropy += passwordEntropy
         }
         return totalEntropy
     }
     
-    func determineStrength() -> String {
+    func determineStrength() -> String? {
         let result = controller.retrieveWebsites()
         var averageEntropy = 0.0
         if let result = result {
             let allPasswords = result as! [Website]
             averageEntropy = calculateEntropy(passwords: allPasswords) / Double(allPasswords.count)
         }
-        var strength : String!
+        var strength : String?
         switch averageEntropy {
         case 0..<28:
             strength = "Very weak"
@@ -98,7 +98,9 @@ class SecurityViewController: UIViewController, UITableViewDelegate, UITableView
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == segueIdentifier {
-            
+            let nextVC = segue.destination as! EditWeakWebsiteViewController
+            let index = tableView.indexPathForSelectedRow?.row
+            nextVC.thisKeyp = keyps[index!]
         }
     }
 }
