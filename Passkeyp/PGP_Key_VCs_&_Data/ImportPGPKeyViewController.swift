@@ -15,6 +15,7 @@ class ImportPGPKeyViewController: UIViewController, UIDocumentPickerDelegate {
     var picking: String = ""
     var pubKeyURL: URL?
     var secKeyURL: URL?
+    var delegate: PGPKeyViewController!
     let userSettings = ModeSettingDataController.controller
     
     @IBOutlet weak var publicKeyUrlLabel: UILabel!
@@ -23,6 +24,7 @@ class ImportPGPKeyViewController: UIViewController, UIDocumentPickerDelegate {
     @IBOutlet weak var publicKeyButton: UIButton!
     @IBOutlet weak var secretKeyButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +37,19 @@ class ImportPGPKeyViewController: UIViewController, UIDocumentPickerDelegate {
         publicKeyButton.tintColor = uIColor
         secretKeyButton.tintColor = uIColor
         saveButton.tintColor = uIColor
+        cancelButton.tintColor = uIColor
+    }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
     }
     
     //Check if files are valid and passphrase is entered.
     @IBAction func saveButton(_ sender: Any) {
-        if passphraseTextField.text == "" || pubKeyURL == nil || secKeyURL == nil {
+        if delegate.keySaved {
+            alertKeyAlreadySaved()
+        } else if passphraseTextField.text == "" || pubKeyURL == nil || secKeyURL == nil{
             alertInvalid()
         } else {
             do {
@@ -72,6 +82,9 @@ class ImportPGPKeyViewController: UIViewController, UIDocumentPickerDelegate {
             } catch {
                 print("Read Key Error")
             }
+            delegate.keySaved = true
+            delegate.refreshOptions()
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -79,6 +92,18 @@ class ImportPGPKeyViewController: UIViewController, UIDocumentPickerDelegate {
         let controller = UIAlertController(
             title: "Invalid Input",
             message: "Public key, Secret key, and Passphrase must all me entered.",
+            preferredStyle: .alert)
+        controller.addAction(UIAlertAction(
+                                title: "OK",
+                                style: .default,
+                                handler: nil))
+        present(controller, animated: true, completion: nil)
+    }
+    
+    func alertKeyAlreadySaved() {
+        let controller = UIAlertController(
+            title: "Key Already Exists",
+            message: "Delete the current key to add a new one.",
             preferredStyle: .alert)
         controller.addAction(UIAlertAction(
                                 title: "OK",

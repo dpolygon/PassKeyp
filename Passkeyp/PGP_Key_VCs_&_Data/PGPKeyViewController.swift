@@ -7,6 +7,7 @@
 
 import UIKit
 import ObjectivePGP
+import Security
 
 class PGPKeyViewController: UITableViewController {
 
@@ -15,6 +16,7 @@ class PGPKeyViewController: UITableViewController {
     @IBOutlet weak var filesKeyImage: UIImageView!
     @IBOutlet weak var removeButton: UIButton!
     let userSettings = ModeSettingDataController.controller
+    var keySaved: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +28,72 @@ class PGPKeyViewController: UITableViewController {
         generateKeyImage.tintColor = uIColor
         filesKeyImage.tintColor = uIColor
         removeButton.tintColor = uIColor
+        refreshOptions()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // deselecting row animation enabled
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath == [0, 0] {
-            requestPassphrase()
+            if keySaved {
+                alertKeyAlreadySaved()
+            } else {
+                requestPassphrase()
+            }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "importPGPSegue",
+            let importPGPVC = segue.destination as? ImportPGPKeyViewController {
+            importPGPVC.delegate = self
+            
+        }
+    }
+    
+    func alertKeyAlreadySaved() {
+        let controller = UIAlertController(
+            title: "Key Already Exists",
+            message: "Delete the current key to add a new one.",
+            preferredStyle: .alert)
+        controller.addAction(UIAlertAction(
+                                title: "OK",
+                                style: .default,
+                                handler: nil))
+        present(controller, animated: true, completion: nil)
+    }
+    
+    //Show and hide remove button and update status and change actionability of import options depending on key state
+    func refreshOptions() {
+        if keySaved {
+            removeButton.isHidden = false
+        } else {
+            removeButton.isHidden = true
+        }
+        updateStatusLabel()
+    }
+    
+    //updates the status label
+    func updateStatusLabel() {
+        let imageAttachment = NSTextAttachment()
+        let textAfterIcon: NSAttributedString
+        if keySaved {
+            imageAttachment.image = UIImage.strokedCheckmark
+            textAfterIcon = NSAttributedString(string: "Valid PGP Keypair Saved.")
+        } else {
+            imageAttachment.image = UIImage.remove
+            textAfterIcon = NSAttributedString(string: "No PGP Keypair.")
+        }
+        
+        let imageOffsetY: CGFloat = -4
+        imageAttachment.bounds = CGRect(x: 0, y: imageOffsetY, width: imageAttachment.image!.size.width, height: imageAttachment.image!.size.height)
+        let attachmentString = NSAttributedString(attachment: imageAttachment)
+        let completeText = NSMutableAttributedString(string: "")
+        completeText.append(attachmentString)
+        completeText.append(textAfterIcon)
+        
+        keyStatusLabel.textAlignment = .center
+        keyStatusLabel.attributedText = completeText
     }
     
     //Ask user for a passphrase in generation of a new keypair, then save the passphrase and generate the keypair (in handler)
@@ -85,9 +145,27 @@ class PGPKeyViewController: UITableViewController {
         } catch {
             print("invalid key generation")
         }
+        
+        let password = passphrase.data(using: String.Encoding.utf8)!
+        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
+                                    kSecValueData as String: password]
+        
+        
+        SecItemDelete(query as CFDictionary)
+        SecItemAdd(query as CFDictionary, nil)
+        
+        keySaved = true
+        refreshOptions()
     }
     
+    //Removes key and passphrase and resets screen to allow new input
     @IBAction func RemoveKeysButton(_ sender: Any) {
+        let kr = ObjectivePGP.defaultKeyring
+        let key = kr.keys
+        kr.delete(keys: key)
+        
+        keySaved = false
+        refreshOptions()
     }
     
     /*
