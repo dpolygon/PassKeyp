@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D590B8726C767E300B8AB7A /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4D590B8626C767E300B8AB7A /* OctoKit */; };
 		4D771E2E26BDB3C40002EFB9 /* ModeSettingsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D771E2D26BDB3C40002EFB9 /* ModeSettingsDataController.swift */; };
 		4DD8EFC226A74E9C00E0C4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFC126A74E9C00E0C4AF /* AppDelegate.swift */; };
 		4DD8EFC426A74E9C00E0C4AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8EFC326A74E9C00E0C4AF /* SceneDelegate.swift */; };
@@ -111,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D590B8726C767E300B8AB7A /* OctoKit in Frameworks */,
 				885FAAC828A85AE749BF5F65 /* Pods_Passkeyp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +260,9 @@
 			dependencies = (
 			);
 			name = Passkeyp;
+			packageProductDependencies = (
+				4D590B8626C767E300B8AB7A /* OctoKit */,
+			);
 			productName = Passkeyp;
 			productReference = 4DD8EFBE26A74E9C00E0C4AF /* Passkeyp.app */;
 			productType = "com.apple.product-type.application";
@@ -286,6 +291,9 @@
 				Base,
 			);
 			mainGroup = 4DD8EFB526A74E9C00E0C4AF;
+			packageReferences = (
+				4D590B8526C767E300B8AB7A /* XCRemoteSwiftPackageReference "octokit.swift" */,
+			);
 			productRefGroup = 4DD8EFBF26A74E9C00E0C4AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -593,6 +601,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D590B8526C767E300B8AB7A /* XCRemoteSwiftPackageReference "octokit.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:nerdishbynature/octokit.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D590B8626C767E300B8AB7A /* OctoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D590B8526C767E300B8AB7A /* XCRemoteSwiftPackageReference "octokit.swift" */;
+			productName = OctoKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4DD8EFCA26A74E9C00E0C4AF /* Passkeyp.xcdatamodeld */ = {

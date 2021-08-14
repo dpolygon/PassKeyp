@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yc3-j4-9se">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -9,130 +9,125 @@
     </dependencies>
     <scenes>
         <!--Git Repository View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="QWC-eQ-544">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="GitRepositoryViewController" customModule="Passkeyp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <viewController id="yc3-j4-9se" customClass="GitRepositoryViewController" customModule="Passkeyp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hmo-0L-gLD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in with Github for seamless synchronization of passwords across your devices" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPh-7t-xds">
-                                <rect key="frame" x="56" y="147" width="302" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" systemColor="systemGrayColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="githubSignIn" translatesAutoresizingMaskIntoConstraints="NO" id="Ek9-OV-v1A">
-                                <rect key="frame" x="109" y="101" width="196" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-ZF-Qdl">
-                                <rect key="frame" x="106" y="247" width="203" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="New"/>
-                                    <segment title="Import"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8Dx-LB-sDH" style="IBUITableViewCellStyleDefault" id="F1a-Yh-LjS">
-                                <rect key="frame" x="32" y="361" width="350" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F1a-Yh-LjS" id="PNN-5w-02M">
-                                    <rect key="frame" x="0.0" y="0.0" width="320.5" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Protocol" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Dx-LB-sDH">
-                                            <rect key="frame" x="20" y="0.0" width="292.5" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                            </tableViewCell>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="https://github.com/Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pn-Mv-Vy3">
-                                <rect key="frame" x="90" y="311" width="234" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="tlh-H0-1oC" style="IBUITableViewCellStyleDefault" id="rDH-zB-bjK">
-                                <rect key="frame" x="32" y="426" width="350" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rDH-zB-bjK" id="KuN-Dz-iNC">
-                                    <rect key="frame" x="0.0" y="0.0" width="320.5" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Path" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tlh-H0-1oC">
-                                            <rect key="frame" x="20" y="0.0" width="292.5" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                            </tableViewCell>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="442-yb-eVv">
-                                <rect key="frame" x="159" y="435" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="systemGrayColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Eax-6f-Q5l">
-                                <rect key="frame" x="255" y="367" width="103" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="https"/>
-                                    <segment title="ssh"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfB-9x-X9j">
-                                <rect key="frame" x="115" y="512" width="185" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="azK-Xi-YTi">
+                                <rect key="frame" x="57" y="100" width="300" height="86.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="githubSignIn" translatesAutoresizingMaskIntoConstraints="NO" id="Rxa-rx-e7q">
+                                        <rect key="frame" x="37" y="0.0" width="226" height="50"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="h2x-nI-nun"/>
+                                            <constraint firstAttribute="width" secondItem="Rxa-rx-e7q" secondAttribute="height" multiplier="317:70" id="ncb-DY-idv"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="W9r-yS-6z4" appends="YES" id="pMr-R6-p5L"/>
+                                        </connections>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Github for seamless synchronization of passwords across your devices" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlD-eY-Qn5">
+                                        <rect key="frame" x="0.0" y="60" width="300" height="26.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Im9-Bp-FZv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-6S-89D">
+                                <rect key="frame" x="57" y="399.5" width="300" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ay1-oU-xqC"/>
+                                    <constraint firstAttribute="height" constant="50" id="idq-bm-Wqt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="Clone">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="clonePressed:" destination="yc3-j4-9se" eventType="touchUpInside" id="0fj-iy-ygL"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vrV-Ki-WKJ">
+                                <rect key="frame" x="58" y="271" width="300" height="94"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qkz-sE-WCP">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
+                                        <segments>
+                                            <segment title="New"/>
+                                            <segment title="Import"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/Placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGm-wl-wKe">
+                                        <rect key="frame" x="0.0" y="46" width="300" height="14.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repo Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IEi-YN-7AE">
+                                        <rect key="frame" x="0.0" y="75.5" width="300" height="18.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="BlV-8J-QbU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFh-Ir-wAm">
+                                <rect key="frame" x="134" y="736" width="147" height="41"/>
+                                <state key="normal" title="remove account"/>
+                                <connections>
+                                    <action selector="removeAccountTapped:" destination="yc3-j4-9se" eventType="touchUpInside" id="Wcq-o5-C7i"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="zuc-kf-jVS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zuc-kf-jVS" firstAttribute="bottom" secondItem="dFh-Ir-wAm" secondAttribute="bottom" constant="85" id="2Ud-GU-4TH"/>
+                            <constraint firstItem="RNa-6S-89D" firstAttribute="centerX" secondItem="zuc-kf-jVS" secondAttribute="centerX" id="2w1-1d-X2O"/>
+                            <constraint firstItem="zuc-kf-jVS" firstAttribute="trailing" secondItem="vrV-Ki-WKJ" secondAttribute="trailing" constant="56" id="4Zg-J2-b7n"/>
+                            <constraint firstItem="vrV-Ki-WKJ" firstAttribute="top" secondItem="azK-Xi-YTi" secondAttribute="bottom" constant="63.5" id="7MT-n3-lm3"/>
+                            <constraint firstItem="vrV-Ki-WKJ" firstAttribute="centerX" secondItem="zuc-kf-jVS" secondAttribute="centerX" id="FOU-mW-elD"/>
+                            <constraint firstItem="dFh-Ir-wAm" firstAttribute="leading" secondItem="zuc-kf-jVS" secondAttribute="leading" constant="134" id="PNV-Nk-Zvi"/>
+                            <constraint firstItem="azK-Xi-YTi" firstAttribute="top" secondItem="zuc-kf-jVS" secondAttribute="top" constant="56" id="Rev-hc-Osu"/>
+                            <constraint firstItem="RNa-6S-89D" firstAttribute="top" secondItem="vrV-Ki-WKJ" secondAttribute="bottom" constant="55.5" id="mAh-fR-JAY"/>
+                            <constraint firstItem="azK-Xi-YTi" firstAttribute="leading" secondItem="zuc-kf-jVS" secondAttribute="leading" constant="57" id="n5K-bQ-Hl4"/>
+                            <constraint firstItem="vrV-Ki-WKJ" firstAttribute="leading" secondItem="zuc-kf-jVS" secondAttribute="leading" constant="58" id="ol4-cV-Ha7"/>
+                            <constraint firstItem="zuc-kf-jVS" firstAttribute="trailing" secondItem="dFh-Ir-wAm" secondAttribute="trailing" constant="133" id="u5R-8e-naH"/>
+                            <constraint firstItem="zuc-kf-jVS" firstAttribute="trailing" secondItem="azK-Xi-YTi" secondAttribute="trailing" constant="57" id="uBW-id-yrG"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="o2p-2b-xeU"/>
+                    <navigationItem key="navigationItem" id="B0O-de-tkz"/>
+                    <connections>
+                        <outlet property="cloneButton" destination="RNa-6S-89D" id="VVI-M9-ahg"/>
+                        <outlet property="githubButton" destination="Rxa-rx-e7q" id="44F-Nm-hzn"/>
+                        <outlet property="repoLocationField" destination="IEi-YN-7AE" id="WGX-Kp-h4P"/>
+                        <outlet property="repoLocationLabel" destination="xGm-wl-wKe" id="wp3-Se-ZZ5"/>
+                        <outlet property="signInStatus" destination="UlD-eY-Qn5" id="hK3-ic-jGv"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AKS-aT-n0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W9r-yS-6z4">
+                    <connections>
+                        <action selector="signInWithGithubTapped:" destination="yc3-j4-9se" id="xTu-95-Nvj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="969.56521739130437" y="152.67857142857142"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YkN-d3-VZT">
-            <objects>
-                <viewController id="W60-mQ-Dni" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V5d-Nm-f3q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="bia-1p-rfc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bdS-SD-QD2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="394" y="593"/>
+            <point key="canvasLocation" x="1124.6376811594205" y="142.63392857142856"/>
         </scene>
     </scenes>
     <resources>
         <image name="githubSignIn" width="634" height="140"/>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

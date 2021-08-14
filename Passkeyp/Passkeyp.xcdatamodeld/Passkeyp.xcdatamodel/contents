@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ModeSettings" representedClassName="ModeSettings" syncable="YES" codeGenerationType="class">
         <attribute name="accentColor" optional="YES" attributeType="Transformable"/>
         <attribute name="darkMode" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="githubUser" optional="YES" attributeType="String"/>
         <attribute name="matchSystem" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="pgpPassphrase" optional="YES" attributeType="String"/>
         <attribute name="requireLogin" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="token" optional="YES" attributeType="String"/>
         <attribute name="useFaceID" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="userPFP" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
@@ -18,7 +20,7 @@
         <attribute name="websiteName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ModeSettings" positionX="-63" positionY="9" width="128" height="178"/>
+        <element name="ModeSettings" positionX="-63" positionY="9" width="128" height="194"/>
         <element name="Website" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

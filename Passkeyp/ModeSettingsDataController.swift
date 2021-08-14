@@ -58,6 +58,8 @@ class ModeSettingDataController {
         userSettings.setValue(nil, forKey: "pgpPassphrase")
         userSettings.setValue(true, forKey: "requireLogin")
         userSettings.setValue(false, forKey: "useFaceID")
+        userSettings.setValue("nil", forKey: "githubUser")
+        userSettings.setValue("noToken", forKey: "token")
         appDelegate.saveContext()
         return userSettings
     }
@@ -178,6 +180,24 @@ class ModeSettingDataController {
     func usePreviousSettingProfile(oldSettings: NSManagedObject){
         userSettingsObject = oldSettings
         appDelegate.saveContext()
+    }
+    
+    func setToken(token: String) {
+        userSettings.setValue(token, forKey: "token")
+        appDelegate.saveContext()
+    }
+    
+    func getToken() -> String {
+        return userSettings.token!
+    }
+    
+    func setGithubUser(user: String) {
+        userSettings.setValue(user, forKey: "githubUser")
+        appDelegate.saveContext()
+    }
+    
+    func getGithubUser() -> String {
+        return userSettings.githubUser!
     }
     
     func printSettings() {
