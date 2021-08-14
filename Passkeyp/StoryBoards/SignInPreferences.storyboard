@@ -32,18 +32,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require Password at Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ml9-gM-zxr">
-                                                    <rect key="frame" x="20" y="11.5" width="199" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0D-ly-BOv">
                                                     <rect key="frame" x="305" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="requirePasswordChanged:" destination="yvb-gm-y94" eventType="valueChanged" id="eBu-dZ-7c1"/>
                                                     </connections>
                                                 </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require Password at Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ml9-gM-zxr">
+                                                    <rect key="frame" x="20" y="11.5" width="199" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ml9-gM-zxr" firstAttribute="leading" secondItem="sNM-cP-UiY" secondAttribute="leading" constant="20" id="V4h-Dg-1yH"/>
@@ -90,6 +90,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="faceIDCell" destination="uQd-1a-QKh" id="KNZ-Jh-DHZ"/>
                         <outlet property="faceIDSwitch" destination="VZx-ab-uWm" id="DcW-AK-1JP"/>
                         <outlet property="passwordSwitch" destination="g0D-ly-BOv" id="SGF-SJ-KaT"/>
                     </connections>

@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import CoreData
+import Firebase
 
 // Handles all data storage/retrieval in Core Data
 class ModeSettingDataController {
@@ -54,6 +55,9 @@ class ModeSettingDataController {
         userSettings.setValue("defaultName", forKey: "userName")
         userSettings.setValue(nil, forKey: "userPFP")
         userSettings.setValue("mainUser", forKey: "userUID")
+        userSettings.setValue(nil, forKey: "pgpPassphrase")
+        userSettings.setValue(true, forKey: "requireLogin")
+        userSettings.setValue(false, forKey: "useFaceID")
         appDelegate.saveContext()
         return userSettings
     }
@@ -87,6 +91,24 @@ class ModeSettingDataController {
     
     func getUserDarkMode() -> Bool {
         return userSettings.darkMode
+    }
+    
+    func setRequireLogin(requireLogin: Bool) {
+        userSettings.setValue(requireLogin, forKey: "requireLogin")
+        appDelegate.saveContext()
+    }
+    
+    func getRequireLogin() -> Bool {
+        return userSettings.requireLogin
+    }
+    
+    func setUseFaceID(useFaceID: Bool) {
+        userSettings.setValue(useFaceID, forKey: "useFaceID")
+        appDelegate.saveContext()
+    }
+    
+    func getUseFaceID() -> Bool {
+        return userSettings.useFaceID
     }
     
     func setMatchSystem(matchSystem: Bool) {
@@ -125,11 +147,32 @@ class ModeSettingDataController {
     }
     
     func setUserUID() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        userSettings.setValue(uid, forKey: "userUID")
+        appDelegate.saveContext()
         
     }
     
-    func getUserUID() {
-        
+    func getUserUID() -> String {
+        if userSettings.userUID == nil {
+            return "uidMissing"
+        }
+        return userSettings.userUID!
+    }
+    
+    func setPassphrase(passphrase: String) {
+            userSettings.setValue(passphrase, forKey: "pgpPassphrase")
+            appDelegate.saveContext()
+    }
+    
+    func getPassphrase() -> String {
+        return userSettings.pgpPassphrase!
+    }
+    
+    func removePassphrase() {
+        userSettings.setValue("", forKey: "pgpPassphrase")
     }
     
     func usePreviousSettingProfile(oldSettings: NSManagedObject){

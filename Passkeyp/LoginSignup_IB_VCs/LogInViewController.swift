@@ -61,9 +61,9 @@ class LogInViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // user isn't logged in
+        self.view.backgroundColor = UIColor.darkGray
         state = .loggedout
-        faceIDButton.isHidden = faceIDHidden
+        faceIDButton.isHidden = !ModeSettingDataController.controller.getUseFaceID()
     }
     
     @IBAction func logInPressed(_ sender: Any) {
@@ -86,7 +86,6 @@ class LogInViewController: UIViewController {
     @IBAction func faceIDPressed(_ sender: Any) {
         // create new context
         context = LAContext()
-        
         
         // check for hardware support
         var error: NSError?

@@ -146,14 +146,8 @@ class PGPKeyViewController: UITableViewController {
             print("invalid key generation")
         }
         
-        let password = passphrase.data(using: String.Encoding.utf8)!
-        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
-                                    kSecValueData as String: password]
-        
-        
-        SecItemDelete(query as CFDictionary)
-        SecItemAdd(query as CFDictionary, nil)
-        
+        userSettings.setPassphrase(passphrase: passphrase)
+//        print(userSettings.getPassphrase())
         keySaved = true
         refreshOptions()
     }

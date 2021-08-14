@@ -78,6 +78,7 @@ class ImportPGPKeyViewController: UIViewController, UIDocumentPickerDelegate {
                     kr.import(keys: pubKey)
                     kr.import(keys: secKey)
                 }
+                userSettings.setPassphrase(passphrase: passphraseTextField.text!)
 //                testEncrypt(passphrase: passphraseTextField.text!)
             } catch {
                 print("Read Key Error")

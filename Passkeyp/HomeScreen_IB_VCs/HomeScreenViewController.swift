@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 var icons = ["collectionIcon", "webIcon", "appsIcon", "entertainmentIcon", "walletIcon", "workIcon", "otherIcon"]
 var categoryLabels = ["Collection", "Websites", "Apps", "Entertainment", "Wallet", "Work", "Other"]
@@ -32,6 +33,12 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     var cellIdentifier = "keypContentCell"
     var websiteCollection = WebsiteDataController.controller.retrieveWebsites()
     var originalLocation: CGPoint?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        creationButton.tintColor = ModeSettingDataController.controller.getUserAccentColor()
+        websiteCollectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -201,12 +208,6 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         recognizer.setTranslation(.zero, in: self.view)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        creationButton.tintColor = ModeSettingDataController.controller.getUserAccentColor()
-        websiteCollectionView.reloadData()
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
@@ -252,4 +253,3 @@ class categoryCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate
     @IBOutlet weak var categoryLabel: UILabel!
     
 }
-
