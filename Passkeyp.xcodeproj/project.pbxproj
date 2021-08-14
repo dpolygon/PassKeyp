@@ -40,6 +40,7 @@
 		7375BA9926C5E7100041FB40 /* ImportPGPKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375BA9826C5E7100041FB40 /* ImportPGPKeyViewController.swift */; };
 		73799F4126C5E403002C3D7E /* PGPKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73799F4026C5E403002C3D7E /* PGPKeyViewController.swift */; };
 		885FAAC828A85AE749BF5F65 /* Pods_Passkeyp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9C90CDA2100F1EE554538F /* Pods_Passkeyp.framework */; };
+		94298C2726C1CC2A0050B559 /* KeychainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94298C2626C1CC2A0050B559 /* KeychainController.swift */; };
 		944B2F6D26B0A403005EDE37 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */; };
 		9489313626B08EF800141394 /* LogInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9489313526B08EF800141394 /* LogInStoryboard.storyboard */; };
 		9489313826B08F2F00141394 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489313726B08F2F00141394 /* LogInViewController.swift */; };
@@ -96,6 +97,7 @@
 		7319B52A26C74F3A002E8A6E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Passkeyp/AboutViewController.swift; sourceTree = SOURCE_ROOT; };
 		7375BA9826C5E7100041FB40 /* ImportPGPKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImportPGPKeyViewController.swift; path = "Passkeyp/PGP_Key_VCs_&_Data/ImportPGPKeyViewController.swift"; sourceTree = SOURCE_ROOT; };
 		73799F4026C5E403002C3D7E /* PGPKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGPKeyViewController.swift; sourceTree = "<group>"; };
+		94298C2626C1CC2A0050B559 /* KeychainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainController.swift; sourceTree = "<group>"; };
 		944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9489313526B08EF800141394 /* LogInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInStoryboard.storyboard; sourceTree = "<group>"; };
 		9489313726B08F2F00141394 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */,
 				9489313726B08F2F00141394 /* LogInViewController.swift */,
+				94298C2626C1CC2A0050B559 /* KeychainController.swift */,
 			);
 			path = LoginSignup_IB_VCs;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				7319B52726C72352002E8A6E /* Passkeyp.xcdatamodeld in Sources */,
 				4DF3224726A9F921001B8121 /* WebsiteDataController.swift in Sources */,
 				4DD8EFC426A74E9C00E0C4AF /* SceneDelegate.swift in Sources */,
+				94298C2726C1CC2A0050B559 /* KeychainController.swift in Sources */,
 				4D771E2E26BDB3C40002EFB9 /* ModeSettingsDataController.swift in Sources */,
 				4DD8EFED26A771FC00E0C4AF /* SettingsViewController.swift in Sources */,
 				7319B52B26C74F3A002E8A6E /* AboutViewController.swift in Sources */,
@@ -535,9 +539,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Passkeyp/Passkeyp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TMNQB85S4M;
+				DEVELOPMENT_TEAM = Y5X54T6NKN;
 				INFOPLIST_FILE = Passkeyp/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = y2kasfc.passkeyp;
+				PRODUCT_BUNDLE_IDENTIFIER = ezueck.passkeyp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Passkeyp/Passkeyp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
