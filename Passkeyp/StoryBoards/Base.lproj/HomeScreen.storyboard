@@ -772,11 +772,11 @@
             </objects>
             <point key="canvasLocation" x="1836.2318840579712" y="583.92857142857144"/>
         </scene>
-        <!--Item-->
+        <!--Passwords-->
         <scene sceneID="BKJ-k7-L64">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S9H-U4-TeH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="list.bullet.rectangle" catalog="system" id="3Mg-ho-j52"/>
+                    <tabBarItem key="tabBarItem" title="Passwords" image="list.bullet.rectangle" catalog="system" id="3Mg-ho-j52"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gQn-nM-r4q">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
