@@ -38,6 +38,9 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         creationButton.tintColor = ModeSettingDataController.controller.getUserAccentColor()
         websiteCollectionView.reloadData()
+        let uIColor = ModeSettingDataController.controller.getUserAccentColor()
+        self.navigationController?.navigationBar.tintColor = uIColor
+        self.tabBarController?.tabBar.tintColor = uIColor
     }
     
     override func viewDidLoad() {

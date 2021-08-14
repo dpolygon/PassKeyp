@@ -36,6 +36,7 @@
 		4DF3224526A9F696001B8121 /* DPImageView+LettersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */; };
 		4DF3224726A9F921001B8121 /* WebsiteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3224626A9F921001B8121 /* WebsiteDataController.swift */; };
 		7319B52726C72352002E8A6E /* Passkeyp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7319B52526C72352002E8A6E /* Passkeyp.xcdatamodeld */; };
+		7319B52B26C74F3A002E8A6E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7319B52A26C74F3A002E8A6E /* AboutViewController.swift */; };
 		7375BA9926C5E7100041FB40 /* ImportPGPKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375BA9826C5E7100041FB40 /* ImportPGPKeyViewController.swift */; };
 		73799F4126C5E403002C3D7E /* PGPKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73799F4026C5E403002C3D7E /* PGPKeyViewController.swift */; };
 		885FAAC828A85AE749BF5F65 /* Pods_Passkeyp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9C90CDA2100F1EE554538F /* Pods_Passkeyp.framework */; };
@@ -92,6 +93,7 @@
 		4DF3224426A9F696001B8121 /* DPImageView+LettersExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPImageView+LettersExtension.swift"; sourceTree = "<group>"; };
 		4DF3224626A9F921001B8121 /* WebsiteDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteDataController.swift; sourceTree = "<group>"; };
 		7319B52626C72352002E8A6E /* Passkeyp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Passkeyp.xcdatamodel; sourceTree = "<group>"; };
+		7319B52A26C74F3A002E8A6E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Passkeyp/AboutViewController.swift; sourceTree = SOURCE_ROOT; };
 		7375BA9826C5E7100041FB40 /* ImportPGPKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImportPGPKeyViewController.swift; path = "Passkeyp/PGP_Key_VCs_&_Data/ImportPGPKeyViewController.swift"; sourceTree = SOURCE_ROOT; };
 		73799F4026C5E403002C3D7E /* PGPKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGPKeyViewController.swift; sourceTree = "<group>"; };
 		944B2F6C26B0A403005EDE37 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				4DD8F00426A7790100E0C4AF /* Security_IB_VCs */,
 				73799F4226C5E4D7002C3D7E /* PGP_Key_VCs_&_Data */,
 				4DD8EFEC26A771FC00E0C4AF /* SettingsViewController.swift */,
+				7319B52A26C74F3A002E8A6E /* AboutViewController.swift */,
 				4DD8EFEE26A7721100E0C4AF /* GitRepositoryViewController.swift */,
 				4DD8EFF226A7722E00E0C4AF /* RandomPasswordViewController.swift */,
 				4DD8EFF426A7724000E0C4AF /* AccentColorPickerViewController.swift */,
@@ -381,6 +384,7 @@
 				4DD8EFC426A74E9C00E0C4AF /* SceneDelegate.swift in Sources */,
 				4D771E2E26BDB3C40002EFB9 /* ModeSettingsDataController.swift in Sources */,
 				4DD8EFED26A771FC00E0C4AF /* SettingsViewController.swift in Sources */,
+				7319B52B26C74F3A002E8A6E /* AboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

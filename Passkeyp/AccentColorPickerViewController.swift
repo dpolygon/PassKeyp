@@ -50,7 +50,6 @@ class AccentColorPickerViewController: UIViewController {
     @IBAction func orangeSelected(_ sender: Any) {
         ModeSettingDataController.controller.setUserAccentColor(accentColor: UIColor.systemOrange)
         previewImage.image = UIImage(named: imageNames.orange)
-        self.navigationController?.navigationBar.tintColor = UIColor.systemOrange
         self.tabBarController?.tabBar.tintColor = UIColor.systemOrange
     }
     

@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,6 +67,118 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzx-3J-Ooa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2034" y="136"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="O10-2h-IbX">
+            <objects>
+                <viewController id="I9k-TA-e5j" customClass="AboutViewController" customModule="Passkeyp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="brj-dx-hk3" customClass="A">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="kZl-QG-Nn9">
+                                <rect key="frame" x="27.666666666666657" y="156.33333333333334" width="335" height="477.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PassKeyp!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcy-uE-X4r">
+                                        <rect key="frame" x="117.99999999999997" y="0.0" width="98.666666666666657" height="26.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PassKeyp is a prototype password manager," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkA-pI-qiG">
+                                        <rect key="frame" x="0.0" y="49.333333333333314" width="335" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It was Developed by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj7-jy-0mg">
+                                        <rect key="frame" x="88.666666666666671" y="92.666666666666657" width="157.66666666666663" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Ryan Travers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T79-Pm-0Ws">
+                                        <rect key="frame" x="122.66666666666666" y="135.99999999999997" width="89.666666666666657" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Daniel Gonzalez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhn-S2-TfA">
+                                        <rect key="frame" x="111.99999999999997" y="175.99999999999997" width="110.66666666666666" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Silvana Borgo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsf-bn-6b4">
+                                        <rect key="frame" x="120" y="215.99999999999997" width="95" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Rachel Christman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJd-Hv-Wee">
+                                        <rect key="frame" x="107.33333333333331" y="256" width="120" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xob-Tj-nFn">
+                                        <rect key="frame" x="145.33333333333334" y="296" width="44" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://github.com/dpolygon/PassKeyp/tree/main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgT-J5-YMS">
+                                        <rect key="frame" x="30" y="339.33333333333337" width="275" height="14.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed for our iOS Dev Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb8-u3-IdX">
+                                        <rect key="frame" x="43.666666666666671" y="376.66666666666663" width="247.66666666666663" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Web Page:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiD-N2-CU7">
+                                        <rect key="frame" x="103.66666666666669" y="420" width="127.33333333333331" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.cs.utexas.edu/~bulko/2021summer/371L.html" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oys-W6-Km6">
+                                        <rect key="frame" x="4.3333333333333428" y="463.33333333333326" width="326.33333333333326" height="14.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qyM-CH-DXU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kZl-QG-Nn9" firstAttribute="centerY" secondItem="brj-dx-hk3" secondAttribute="centerY" id="VgW-1m-7vE"/>
+                            <constraint firstItem="kZl-QG-Nn9" firstAttribute="centerX" secondItem="brj-dx-hk3" secondAttribute="centerX" id="mlc-hO-L6u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blurb" destination="YkA-pI-qiG" id="XTx-26-MR9"/>
+                        <outlet property="daniel" destination="Vhn-S2-TfA" id="Sw2-W0-CRK"/>
+                        <outlet property="devBlurb" destination="kb8-u3-IdX" id="JYM-QK-R5S"/>
+                        <outlet property="developers" destination="rj7-jy-0mg" id="Ry9-s5-voe"/>
+                        <outlet property="header" destination="gcy-uE-X4r" id="V6Z-FG-cBc"/>
+                        <outlet property="rachel" destination="pJd-Hv-Wee" id="Jpx-OS-ALk"/>
+                        <outlet property="repo" destination="xob-Tj-nFn" id="pT5-Kr-3Q5"/>
+                        <outlet property="repoLink" destination="FgT-J5-YMS" id="vYm-2Q-ChX"/>
+                        <outlet property="ryan" destination="T79-Pm-0Ws" id="lC8-mV-XZd"/>
+                        <outlet property="silvana" destination="hsf-bn-6b4" id="4Ls-xf-Cyj"/>
+                        <outlet property="web" destination="LiD-N2-CU7" id="jKa-dM-pFx"/>
+                        <outlet property="webLink" destination="Oys-W6-Km6" id="Mcy-ka-vua"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVD-Rv-1cV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="551.65876777251185"/>
         </scene>
         <!--Settings-->
         <scene sceneID="OEl-2m-b7w">
@@ -295,6 +408,7 @@
                                     <state key="normal" title="About"/>
                                     <connections>
                                         <action selector="aboutPressed:" destination="IU2-67-Zfn" eventType="touchUpInside" id="PtF-ag-plM"/>
+                                        <segue destination="I9k-TA-e5j" kind="presentation" id="Dff-zj-WbE"/>
                                     </connections>
                                 </button>
                             </subviews>

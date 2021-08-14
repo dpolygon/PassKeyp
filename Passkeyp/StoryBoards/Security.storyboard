@@ -33,8 +33,8 @@
                                                             <constraint firstAttribute="height" constant="139" id="JnG-II-cve"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yK-mE-ALm">
-                                                        <rect key="frame" x="64.666666666666671" y="40" width="52" height="26.333333333333329"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yK-mE-ALm">
+                                                        <rect key="frame" x="84" y="40" width="13.333333333333329" height="26.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <color key="textColor" systemColor="linkColor"/>
                                                         <nil key="highlightedColor"/>
@@ -72,8 +72,8 @@
                                                             <constraint firstAttribute="height" constant="139" id="YLx-q8-G7v"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZq-j1-1bL">
-                                                        <rect key="frame" x="64.666666666666686" y="40" width="52" height="26.333333333333329"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZq-j1-1bL">
+                                                        <rect key="frame" x="84" y="40" width="13.333333333333329" height="26.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -151,6 +151,8 @@
                     <navigationItem key="navigationItem" title="Keyp Secure" id="kP4-Ju-bEs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="avgStrengthCircle" destination="4Ws-JC-3Dq" id="Al5-1W-izQ"/>
+                        <outlet property="repeatPasswordsLabel" destination="2yK-mE-ALm" id="00N-lb-hNw"/>
                         <outlet property="tableView" destination="Wge-c5-VW6" id="Joj-5C-5l3"/>
                     </connections>
                 </viewController>

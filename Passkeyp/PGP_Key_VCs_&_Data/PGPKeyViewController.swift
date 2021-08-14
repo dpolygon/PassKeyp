@@ -158,6 +158,8 @@ class PGPKeyViewController: UITableViewController {
         let key = kr.keys
         kr.delete(keys: key)
         
+        userSettings.removePassphrase()
+        
         keySaved = false
         refreshOptions()
     }

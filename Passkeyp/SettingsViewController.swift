@@ -28,6 +28,7 @@ class SettingsViewController: UITableViewController {
         darkModeSwitch.onTintColor = uIColor
         faqButton.setTitleColor(uIColor, for: .normal)
         aboutButton.setTitleColor(uIColor, for: .normal)
+        self.navigationController?.navigationBar.tintColor = uIColor
         
         // set switches to current settings
         matchSystemSwitch.setOn(userSettings.getMatchSystem(), animated: true)
