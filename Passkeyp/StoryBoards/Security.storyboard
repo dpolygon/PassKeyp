@@ -151,8 +151,8 @@
                     <navigationItem key="navigationItem" title="Keyp Secure" id="kP4-Ju-bEs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="passwordStrengthLabel" destination="bZq-j1-1bL" id="lUl-ta-Ytu"/>
-                        <outlet property="repeatedCountLabel" destination="2yK-mE-ALm" id="QJb-1n-omZ"/>
+                        <outlet property="passwordStrengthLabel" destination="bZq-j1-1bL" id="H4N-hG-P1t"/>
+                        <outlet property="repeatedCountLabel" destination="2yK-mE-ALm" id="xQG-Wr-2H4"/>
                         <outlet property="tableView" destination="Wge-c5-VW6" id="Joj-5C-5l3"/>
                     </connections>
                 </viewController>

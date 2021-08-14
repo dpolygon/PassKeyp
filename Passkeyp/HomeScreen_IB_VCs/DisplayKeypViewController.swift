@@ -33,7 +33,7 @@ class DisplayKeypViewController: UITableViewController {
         websiteField.text = keyp.websiteName
         usernameField.text = keyp.username
         passwordField.text = keyp.password
-        //tagDetail.text = keyp.tag
+        tagDetail.text = keyp.tag
         editSaveButton.layer.cornerRadius = 16
         deleteButton.layer.cornerRadius = 16
         

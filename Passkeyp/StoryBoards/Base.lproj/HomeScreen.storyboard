@@ -74,16 +74,22 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dYB-Rk-6XV">
-                                                                            <rect key="frame" x="0.0" y="90" width="35.333333333333336" height="24.666666666666671"/>
+                                                                            <rect key="frame" x="0.0" y="90" width="84" height="24.666666666666671"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trU-YX-q8T">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="10.333333333333334"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="10.333333333333334"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="100" id="kPc-oY-kV9"/>
+                                                                                    </constraints>
                                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bI-xG-U4t">
-                                                                                    <rect key="frame" x="0.0" y="10.333333333333329" width="35.333333333333336" height="14.333333333333336"/>
+                                                                                    <rect key="frame" x="0.0" y="10.333333333333329" width="84" height="14.333333333333336"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="100" id="C2f-fo-Ana"/>
+                                                                                    </constraints>
                                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>

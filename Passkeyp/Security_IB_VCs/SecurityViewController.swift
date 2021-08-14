@@ -9,8 +9,7 @@ import UIKit
 
 class SecurityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var avgStrengthCircle: UIImageView!
-    @IBOutlet weak var repeatPasswordsLabel: UILabel!
+
     let controller = WebsiteDataController.controller
     let cellIdentifier = "passwordCell"
     @IBOutlet weak var tableView: UITableView!
@@ -28,8 +27,7 @@ class SecurityViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         
         let uIColor = ModeSettingDataController.controller.getUserAccentColor()
-        repeatPasswordsLabel.textColor = uIColor
-        avgStrengthCircle.tintColor = uIColor
+        repeatedCountLabel.textColor = uIColor
     }
     
     // TODO: implement protocol methods with correct data
