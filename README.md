@@ -1,5 +1,5 @@
 # PassKeyp: A Password Management Application
-Developed by **Group #6**: **Silvana Borgo**, **Rachel Christman**, **Daniel Gonzalez**, and **Ryan Travers**
+Developed by **Silvana Borgo**, **Rachel Christman**, **Daniel Gonzalez**, and **Ryan Travers**
 
 <a href="url"><img src="https://github.com/dpolygon/PassKeyp/blob/main/Passkeyp/Assets.xcassets/LaunchIcon.imageset/SIX_C09FD644-FF08-45E0-B672-FB5082CE30CF.png" align="center" height="300" width="300" ></a>
 
